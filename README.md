@@ -27,3 +27,21 @@ Fraud detection is critical for securing online transactions and banking operati
 ✔️ Interactive fraud analysis dashboard (Dash)  
 
 ## 📂 Project Structure  
+ ```bash
+   --------------------------------------
+```
+
+## 🛠 Tech Stack  
+- **Programming Language:** Python (Pandas, NumPy, Scikit-learn, TensorFlow/PyTorch)  
+- **Machine Learning Models:** Logistic Regression, Random Forest, Gradient Boosting, LSTM, CNN  
+- **API & Deployment:** Flask, Docker  
+- **Explainability:** SHAP, LIME  
+- **Visualization:** Dash, Matplotlib, Seaborn  
+
+## 🔧 Installation  
+
+### 1️⃣ Clone the repository  
+```sh
+git clone https://github.com/yourusername/fraud-detection-system.git
+cd fraud-detection-system
+```
