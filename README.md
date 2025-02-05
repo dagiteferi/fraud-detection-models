@@ -14,9 +14,7 @@ Fraud detection is critical for securing online transactions and banking operati
 - [Running with Docker](#-running-with-docker)  
 - [Dashboard Features](#-dashboard-features)  
 - [Model Explainability](#-model-explainability)  
-- [Project Timeline](#-project-timeline)  
-- [Contributors](#-contributors)  
-- [License](#-license)  
+
 
 ### 🔹 Key Features  
 ✔️ Data preprocessing and feature engineering  
@@ -45,8 +43,36 @@ Fraud detection is critical for securing online transactions and banking operati
 git clone https://github.com/dagiteferi/fraud-detection-system.git
 cd fraud-detection-system
 ```
+2️⃣ Create a virtual environment
 ```sh
-### 2️⃣ Create a virtual environment
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
+###  3️⃣ Install dependencies
+```sh
+pip install -r requirements.txt
+```
+### 4️⃣ Run the API
+```sh
+cd -----
+python s-----
+```
+### 5️⃣ Run the Dashboard
+```sh
+cd -----
+python -----
+```
+## 🚀 Running with Docker
+```sh
+docker build -t ----- .
+docker run -p ---------
+```
+## 📊 Dashboard Features
+
+. 
+. 
+. 
+. 
+## 📌 Model Explainability
+SHAP Summary & Force Plots for feature importance
+LIME explanations for individual predictions
