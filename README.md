@@ -42,6 +42,8 @@ Fraud detection is critical for securing online transactions and banking operati
 
 ### 1️⃣ Clone the repository  
 ```sh
-git clone https://github.com/yourusername/fraud-detection-system.git
+git clone https://github.com/dagiteferi/fraud-detection-system.git
 cd fraud-detection-system
 ```
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
