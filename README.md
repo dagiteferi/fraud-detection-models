@@ -40,8 +40,8 @@ Fraud detection is critical for securing online transactions and banking operati
 
 ### 1️⃣ Clone the repository  
 ```sh
-git clone https://github.com/dagiteferi/fraud-detection-system.git
-cd fraud-detection-system
+git clone https://github.com/dagiteferi/fraud-detection-models.git
+cd fraud-detection-models
 ```
 2️⃣ Create a virtual environment
 ```sh
