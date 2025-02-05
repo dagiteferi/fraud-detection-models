@@ -19,11 +19,21 @@ def create_directory_if_not_exists(directory_path):
 log_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../logs"))
 create_directory_if_not_exists(log_dir)
 
+# Set up logging to a file
 logging.basicConfig(
     filename=os.path.join(log_dir, 'data_loading.log'),
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
+
+# Set up logging to the console as well
+console_handler = logging.StreamHandler(sys.stdout)
+console_handler.setLevel(logging.INFO)
+formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+console_handler.setFormatter(formatter)
+
+# Add the console handler to the logger
+logging.getLogger().addHandler(console_handler)
 
 # Set the dataset directory
 _DATASET_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../data"))
