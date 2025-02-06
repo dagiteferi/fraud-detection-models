@@ -1,4 +1,5 @@
 import pandas as pd
+from sklearn.preprocessing import StandardScaler
 from scripts.logger import logger  # Import logger
 
 class FeatureEngineering:
