@@ -25,6 +25,15 @@ class FeatureEngineering:
         """Calculates the transaction frequency and velocity for each user and device."""
         self.logging.info("Calculating transaction frequency and velocity...")
         try:
+            # Ensure 'purchase_time' is in datetime format
+            self.df['purchase_time'] = pd.to_datetime(self.df['purchase_time'])
+
+            # Sort the DataFrame by user_id and purchase_time
+            self.df = self.df.sort_values(by=['user_id', 'purchase_time'])
+
+            # Calculate the time difference between consecutive transactions for each user
+            self.df['purchase_delay'] = self.df.groupby('user_id')['purchase_time'].diff().dt.total_seconds().fillna(0)
+
             # Transaction frequency per user
             user_freq = self.df.groupby('user_id').size()
             self.df['user_transaction_frequency'] = self.df['user_id'].map(user_freq)
@@ -34,7 +43,7 @@ class FeatureEngineering:
             self.df['device_transaction_frequency'] = self.df['device_id'].map(device_freq)
 
             # Transaction velocity: transactions per hour for each user
-            self.df['user_transaction_velocity'] = self.df['user_transaction_frequency'] / self.df['purchase_delay']
+            self.df['user_transaction_velocity'] = self.df['user_transaction_frequency'] / (self.df['purchase_delay'] / 3600).replace(0, 1)  # Avoid division by zero
             self.logging.info("Transaction frequency and velocity calculated successfully.")
         except Exception as e:
             self.logging.error("Error in calculating transaction frequency and velocity: %s", e)
