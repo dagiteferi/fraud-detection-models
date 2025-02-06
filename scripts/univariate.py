@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-from logger import logger  # Import logger
+from scripts.logger import logger # Import logger
 
 def summary_statistics(df, name="Dataset"):
     """Prints summary statistics and logs the step."""

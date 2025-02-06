@@ -1,6 +1,6 @@
 import seaborn as sns
 import matplotlib.pyplot as plt
-from logger import logger  # Import logger
+from scripts.logger import logger # Import logger
 
 def correlation_heatmap(df, name="Dataset"):
     """Plots correlation heatmap and logs the step."""
