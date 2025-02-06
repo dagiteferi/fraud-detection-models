@@ -11,8 +11,13 @@ def summary_statistics(df, name="Dataset"):
 def plot_histograms(df, name="Dataset"):
     """Plots histograms for numerical columns and logs the step."""
     logger.info(f"Plotting histograms for {name}")
-    df.hist(figsize=(12, 8), bins=30)
+    fig, axes = plt.subplots(nrows=3, ncols=3, figsize=(15, 10))
+    df.hist(ax=axes, bins=30)
+    for ax in axes.flatten():
+        for label in ax.get_xticklabels():
+            label.set_rotation(45)
     plt.suptitle(f"{name} - Feature Distributions")
+    plt.tight_layout(rect=[0, 0.03, 1, 0.95])
     plt.show()
 
 def plot_boxplots(df, numeric_columns, name="Dataset"):

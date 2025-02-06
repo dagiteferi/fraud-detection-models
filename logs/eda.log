@@ -9,3 +9,10 @@
 2025-02-06 09:04:27,143 - INFO - Generating summary statistics for Fraud Data
 2025-02-06 09:04:27,234 - INFO - Plotting histograms for Fraud Data
 2025-02-06 09:04:28,329 - INFO - Plotting boxplot for purchase_value in Fraud Data
+2025-02-06 09:09:18,971 - INFO - Generating summary statistics for Credit Card Data
+2025-02-06 09:09:19,511 - INFO - Plotting histograms for Credit Card Data
+2025-02-06 09:09:55,946 - INFO - Generating correlation heatmap for Credit Card Data
+2025-02-06 09:09:57,422 - INFO - Generating boxplot for purchase_value by class in Fraud Data
+2025-02-06 09:09:57,525 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-02-06 09:09:57,647 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-02-06 09:09:57,807 - INFO - Generating pairplot for Credit Card Data
