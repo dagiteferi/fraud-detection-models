@@ -1,5 +1,10 @@
-import logging
+
 import os
+import logging
+
+# Setup logger
+logger = logging.getLogger('fraud_detection_logger')
+logger.setLevel(logging.DEBUG)
 
 # Ensure logs directory exists
 os.makedirs("../logs", exist_ok=True)
