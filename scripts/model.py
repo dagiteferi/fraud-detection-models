@@ -16,12 +16,11 @@ logger.setLevel(logging.DEBUG)
 # Ensure logs directory exists
 os.makedirs("logs", exist_ok=True)
 
-# Configure logging
 logging.basicConfig(
     level=logging.INFO,  # Log level
     format="%(asctime)s - %(levelname)s - %(message)s",
     handlers=[
-        logging.FileHandler("logs/model.log"),  # Save logs to file
+        logging.FileHandler("../logs/model.log"),  # Save logs to file outside the notebook directory
         logging.StreamHandler()  # Print logs in Jupyter notebook
     ]
 )
