@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/HP/Documents/Dagii/week%208%20--9/fraud-detection-models/notebooks/mlruns/0/cf874cdf3785428a9db3a3f51dbc73c7/artifacts
+end_time: 1738958956762
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: cf874cdf3785428a9db3a3f51dbc73c7
+run_name: Logistic Regression - Fraud Data
+run_uuid: cf874cdf3785428a9db3a3f51dbc73c7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1738958952444
+status: 3
+tags: []
+user_id: SAMI
