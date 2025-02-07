@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/0fdbc7df3eb4475ba592ae8912d562d8/artifacts
+end_time: 1738908007730
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 0fdbc7df3eb4475ba592ae8912d562d8
+run_name: Logistic Regression - Credit Card Data
+run_uuid: 0fdbc7df3eb4475ba592ae8912d562d8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1738907991810
+status: 3
+tags: []
+user_id: SAMI
