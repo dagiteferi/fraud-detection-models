@@ -14,7 +14,7 @@ logger = logging.getLogger('fraud_detection_logger')
 logger.setLevel(logging.DEBUG)
 
 # Ensure logs directory exists
-os.makedirs("logs", exist_ok=True)
+os.makedirs("../logs", exist_ok=True)
 
 logging.basicConfig(
     level=logging.INFO,  # Log level
@@ -38,12 +38,7 @@ def split_data(X, y, test_size=0.2, random_state=42):
     return train_test_split(X, y, test_size=test_size, random_state=random_state)
 
 if __name__ == "__main__":
-    # Assuming data is loaded in the notebook and passed to the script
-    # Use the data loaded in the notebook
-    # fraud_df and credit_df are loaded in your notebook using loader.py
-    # Example:
-    # fraud_df = dl.load_data("Fraud_Data.csv")
-    # credit_df = dl.load_data("creditcard.csv")
+    
     
     # Feature and Target Separation for creditcard.csv
     X_credit, y_credit = prepare_data(credit_df, 'Class')
@@ -66,38 +61,39 @@ if __name__ == "__main__":
         "MLP": MLPClassifier()
     }
 
-    # Track experiments and log metrics
-    for model_name, model in models.items():
-        with mlflow.start_run(run_name=model_name):
+    # Step 1: Logistic Regression
+    if "Logistic Regression" in models:
+        model_name = "Logistic Regression"
+        model = models[model_name]
+        
+        with mlflow.start_run(run_name=f"{model_name} - Credit Card Data"):
             logger.info(f"Training {model_name} for credit card data")
             model.fit(X_train_credit, y_train_credit)
-            y_pred = model.predict(X_test_credit)
-            report = classification_report(y_test_credit, y_pred, output_dict=True)
-            accuracy = report['accuracy']
+            y_pred_credit = model.predict(X_test_credit)
+            report_credit = classification_report(y_test_credit, y_pred_credit, output_dict=True)
+            accuracy_credit = report_credit['accuracy']
 
             # Log parameters and metrics
             mlflow.log_param("model", model_name)
-            mlflow.log_metric("accuracy", accuracy)
+            mlflow.log_metric("accuracy", accuracy_credit)
 
             # Log the model
-            mlflow.sklearn.log_model(model, model_name)
+            mlflow.sklearn.log_model(model, f"{model_name.lower().replace(' ', '_')}_credit")
 
-            logger.info(f"{model_name}:\n{classification_report(y_test_credit, y_pred)}")
+            logger.info(f"{model_name} - Credit Card Data:\n{classification_report(y_test_credit, y_pred_credit)}")
 
-    # Repeat the same process for fraud data
-    for model_name, model in models.items():
-        with mlflow.start_run(run_name=model_name):
+        with mlflow.start_run(run_name=f"{model_name} - Fraud Data"):
             logger.info(f"Training {model_name} for fraud data")
             model.fit(X_train_fraud, y_train_fraud)
-            y_pred = model.predict(X_test_fraud)
-            report = classification_report(y_test_fraud, y_pred, output_dict=True)
-            accuracy = report['accuracy']
+            y_pred_fraud = model.predict(X_test_fraud)
+            report_fraud = classification_report(y_test_fraud, y_pred_fraud, output_dict=True)
+            accuracy_fraud = report_fraud['accuracy']
 
             # Log parameters and metrics
             mlflow.log_param("model", model_name)
-            mlflow.log_metric("accuracy", accuracy)
+            mlflow.log_metric("accuracy", accuracy_fraud)
 
             # Log the model
-            mlflow.sklearn.log_model(model, model_name)
+            mlflow.sklearn.log_model(model, f"{model_name.lower().replace(' ', '_')}_fraud")
 
-            logger.info(f"{model_name}:\n{classification_report(y_test_fraud, y_pred)}")
+            logger.info(f"{model_name} - Fraud Data:\n{classification_report(y_test_fraud, y_pred_fraud)}")
