@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/HP/Documents/Dagii/week%208%20--9/fraud-detection-models/notebooks/mlruns/0/f2cc60c7af924f5d9ae79ea0543169e8/artifacts
+end_time: 1738936456224
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: f2cc60c7af924f5d9ae79ea0543169e8
+run_name: Logistic Regression - Credit Card Data
+run_uuid: f2cc60c7af924f5d9ae79ea0543169e8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1738936445432
+status: 3
+tags: []
+user_id: SAMI
