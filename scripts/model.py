@@ -7,6 +7,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report
+from sklearn.ensemble import GradientBoostingClassifier
 
 # Setup logger
 logger = logging.getLogger('fraud_detection_logger')
@@ -124,3 +125,29 @@ if __name__ == "__main__":
         mlflow.sklearn.log_model(random_forest_model, "random_forest_model_fraud", input_example=X_test_fraud[:5])
 
         logger.info(f"Random Forest - Fraud Data:\n{classification_report(y_test_fraud, y_pred_fraud)}")
+    
+    
+
+
+# Train and evaluate Gradient Boosting model for Fraud_Data.csv
+with mlflow.start_run(run_name="Gradient Boosting - Fraud Data"):
+    gradient_boosting_model = GradientBoostingClassifier(n_estimators=100, learning_rate=0.1, max_depth=3, random_state=42)
+    
+    # Ensure feature data is in float64 to avoid MLflow warnings
+    X_train_fraud = X_train_fraud.astype('float64')
+    X_test_fraud = X_test_fraud.astype('float64')
+
+    gradient_boosting_model.fit(X_train_fraud, y_train_fraud)
+    y_pred_fraud = gradient_boosting_model.predict(X_test_fraud)
+
+    # Generate classification report
+    report_fraud = classification_report(y_test_fraud, y_pred_fraud, output_dict=True)
+    accuracy_fraud = report_fraud['accuracy']
+
+    # Log parameters, metrics, and model
+    mlflow.log_param("model", "Gradient Boosting")
+    mlflow.log_metric("accuracy", accuracy_fraud)
+    mlflow.sklearn.log_model(gradient_boosting_model, "gradient_boosting_model_fraud", input_example=X_test_fraud[:5])
+
+    # Print classification report
+    print("Gradient Boosting - Fraud Data:\n", classification_report(y_test_fraud, y_pred_fraud))
