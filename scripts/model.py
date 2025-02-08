@@ -42,7 +42,7 @@ if __name__ == "__main__":
     # Use the data loaded in the notebook
     # fraud_df and credit_df are loaded in your notebook using loader.py
     # Example:
-    # fraud_df = dl.load_data("Fraud_Data.csv")
+    # fraud_df = dl.load_data("processed/processed_fraud_data.csv")
     # credit_df = dl.load_data("creditcard.csv")
     
     # Feature and Target Separation for creditcard.csv
@@ -57,28 +57,10 @@ if __name__ == "__main__":
     # Train-Test Split for Fraud_Data.csv
     X_train_fraud, X_test_fraud, y_train_fraud, y_test_fraud = split_data(X_fraud, y_fraud)
     
-    # Train Logistic Regression Model for Credit Card Data
-    with mlflow.start_run(run_name="Logistic Regression - Credit Card Data"):
-        logger.info("Training Logistic Regression for credit card data")
-        logistic_model = LogisticRegression()
-        logistic_model.fit(X_train_credit, y_train_credit)
-        y_pred_credit = logistic_model.predict(X_test_credit)
-        report_credit = classification_report(y_test_credit, y_pred_credit, output_dict=True)
-        accuracy_credit = report_credit['accuracy']
-
-        # Log parameters and metrics
-        mlflow.log_param("model", "Logistic Regression")
-        mlflow.log_metric("accuracy", accuracy_credit)
-
-        # Log the model
-        mlflow.sklearn.log_model(logistic_model, "logistic_model_credit")
-
-        logger.info(f"Logistic Regression - Credit Card Data:\n{classification_report(y_test_credit, y_pred_credit)}")
-
     # Train Logistic Regression Model for Fraud Data
     with mlflow.start_run(run_name="Logistic Regression - Fraud Data"):
         logger.info("Training Logistic Regression for fraud data")
-        logistic_model = LogisticRegression()
+        logistic_model = LogisticRegression(max_iter=1000, solver='lbfgs', class_weight='balanced')
         logistic_model.fit(X_train_fraud, y_train_fraud)
         y_pred_fraud = logistic_model.predict(X_test_fraud)
         report_fraud = classification_report(y_test_fraud, y_pred_fraud, output_dict=True)
@@ -92,3 +74,21 @@ if __name__ == "__main__":
         mlflow.sklearn.log_model(logistic_model, "logistic_model_fraud")
 
         logger.info(f"Logistic Regression - Fraud Data:\n{classification_report(y_test_fraud, y_pred_fraud)}")
+    
+    # Train Decision Tree Model for Fraud Data
+    with mlflow.start_run(run_name="Decision Tree - Fraud Data"):
+        logger.info("Training Decision Tree for fraud data")
+        decision_tree_model = DecisionTreeClassifier()
+        decision_tree_model.fit(X_train_fraud, y_train_fraud)
+        y_pred_fraud = decision_tree_model.predict(X_test_fraud)
+        report_fraud = classification_report(y_test_fraud, y_pred_fraud, output_dict=True)
+        accuracy_fraud = report_fraud['accuracy']
+
+        # Log parameters and metrics
+        mlflow.log_param("model", "Decision Tree")
+        mlflow.log_metric("accuracy", accuracy_fraud)
+
+        # Log the model
+        mlflow.sklearn.log_model(decision_tree_model, "decision_tree_model_fraud")
+
+        logger.info(f"Decision Tree - Fraud Data:\n{classification_report(y_test_fraud, y_pred_fraud)}")
