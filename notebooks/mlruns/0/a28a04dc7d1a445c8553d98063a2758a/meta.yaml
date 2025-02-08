@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/HP/Documents/Dagii/week%208%20--9/fraud-detection-models/notebooks/mlruns/0/a28a04dc7d1a445c8553d98063a2758a/artifacts
+end_time: 1739012946926
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: a28a04dc7d1a445c8553d98063a2758a
+run_name: Gradient Boosting - Fraud Data
+run_uuid: a28a04dc7d1a445c8553d98063a2758a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739012946872
+status: 4
+tags: []
+user_id: SAMI
