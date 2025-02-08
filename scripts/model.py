@@ -5,8 +5,7 @@ import mlflow.sklearn
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
-from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
-from sklearn.neural_network import MLPClassifier
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report
 
 # Setup logger
@@ -56,11 +55,16 @@ if __name__ == "__main__":
     
     # Train-Test Split for Fraud_Data.csv
     X_train_fraud, X_test_fraud, y_train_fraud, y_test_fraud = split_data(X_fraud, y_fraud)
-    
+
     # Train Logistic Regression Model for Fraud Data
     with mlflow.start_run(run_name="Logistic Regression - Fraud Data"):
         logger.info("Training Logistic Regression for fraud data")
         logistic_model = LogisticRegression(max_iter=1000, solver='lbfgs', class_weight='balanced')
+        
+        # Ensure feature data is in float64 to avoid MLflow warnings
+        X_train_fraud = X_train_fraud.astype('float64')
+        X_test_fraud = X_test_fraud.astype('float64')
+
         logistic_model.fit(X_train_fraud, y_train_fraud)
         y_pred_fraud = logistic_model.predict(X_test_fraud)
         report_fraud = classification_report(y_test_fraud, y_pred_fraud, output_dict=True)
@@ -71,7 +75,7 @@ if __name__ == "__main__":
         mlflow.log_metric("accuracy", accuracy_fraud)
 
         # Log the model
-        mlflow.sklearn.log_model(logistic_model, "logistic_model_fraud")
+        mlflow.sklearn.log_model(logistic_model, "logistic_model_fraud", input_example=X_test_fraud[:5])
 
         logger.info(f"Logistic Regression - Fraud Data:\n{classification_report(y_test_fraud, y_pred_fraud)}")
     
@@ -79,6 +83,11 @@ if __name__ == "__main__":
     with mlflow.start_run(run_name="Decision Tree - Fraud Data"):
         logger.info("Training Decision Tree for fraud data")
         decision_tree_model = DecisionTreeClassifier()
+        
+        # Ensure feature data is in float64 to avoid MLflow warnings
+        X_train_fraud = X_train_fraud.astype('float64')
+        X_test_fraud = X_test_fraud.astype('float64')
+
         decision_tree_model.fit(X_train_fraud, y_train_fraud)
         y_pred_fraud = decision_tree_model.predict(X_test_fraud)
         report_fraud = classification_report(y_test_fraud, y_pred_fraud, output_dict=True)
@@ -89,6 +98,29 @@ if __name__ == "__main__":
         mlflow.log_metric("accuracy", accuracy_fraud)
 
         # Log the model
-        mlflow.sklearn.log_model(decision_tree_model, "decision_tree_model_fraud")
+        mlflow.sklearn.log_model(decision_tree_model, "decision_tree_model_fraud", input_example=X_test_fraud[:5])
 
         logger.info(f"Decision Tree - Fraud Data:\n{classification_report(y_test_fraud, y_pred_fraud)}")
+
+    # Train Random Forest Model for Fraud Data
+    with mlflow.start_run(run_name="Random Forest - Fraud Data"):
+        logger.info("Training Random Forest for fraud data")
+        random_forest_model = RandomForestClassifier(n_estimators=100, random_state=42)
+        
+        # Ensure feature data is in float64 to avoid MLflow warnings
+        X_train_fraud = X_train_fraud.astype('float64')
+        X_test_fraud = X_test_fraud.astype('float64')
+
+        random_forest_model.fit(X_train_fraud, y_train_fraud)
+        y_pred_fraud = random_forest_model.predict(X_test_fraud)
+        report_fraud = classification_report(y_test_fraud, y_pred_fraud, output_dict=True)
+        accuracy_fraud = report_fraud['accuracy']
+
+        # Log parameters and metrics
+        mlflow.log_param("model", "Random Forest")
+        mlflow.log_metric("accuracy", accuracy_fraud)
+
+        # Log the model
+        mlflow.sklearn.log_model(random_forest_model, "random_forest_model_fraud", input_example=X_test_fraud[:5])
+
+        logger.info(f"Random Forest - Fraud Data:\n{classification_report(y_test_fraud, y_pred_fraud)}")
