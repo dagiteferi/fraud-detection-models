@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/HP/Documents/Dagii/week%208%20--9/fraud-detection-models/notebooks/mlruns/0/ddd250e2222a42bcac5dfe3c37ff69f2/artifacts
+end_time: 1739013123067
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: ddd250e2222a42bcac5dfe3c37ff69f2
+run_name: Decision Tree - Fraud Data
+run_uuid: ddd250e2222a42bcac5dfe3c37ff69f2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739013113659
+status: 3
+tags: []
+user_id: SAMI
