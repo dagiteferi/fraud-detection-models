@@ -1,0 +1,43 @@
+artifact_path: logistic_model_fraud
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.13.1
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.6.1
+is_signature_from_type_hint: false
+mlflow_version: 2.20.1
+model_size_bytes: 4750
+model_uuid: d760adfc830c43e9a4fbc6ac0b8a1c27
+run_id: b52f5e1c14974f0982c285a2fee51d83
+saved_input_example_info:
+  artifact_path: input_example.json
+  pandas_orient: split
+  serving_input_path: serving_input_example.json
+  type: dataframe
+signature:
+  inputs: '[{"type": "double", "name": "user_id", "required": true}, {"type": "double",
+    "name": "purchase_value", "required": true}, {"type": "double", "name": "age",
+    "required": true}, {"type": "double", "name": "hour_of_day", "required": true},
+    {"type": "double", "name": "day_of_week", "required": true}, {"type": "double",
+    "name": "purchase_delay", "required": true}, {"type": "double", "name": "user_transaction_frequency",
+    "required": true}, {"type": "double", "name": "device_transaction_frequency",
+    "required": true}, {"type": "double", "name": "user_transaction_velocity", "required":
+    true}, {"type": "double", "name": "source_Direct", "required": true}, {"type":
+    "double", "name": "source_SEO", "required": true}, {"type": "double", "name":
+    "browser_FireFox", "required": true}, {"type": "double", "name": "browser_IE",
+    "required": true}, {"type": "double", "name": "browser_Opera", "required": true},
+    {"type": "double", "name": "browser_Safari", "required": true}, {"type": "double",
+    "name": "sex_M", "required": true}]'
+  outputs: '[{"type": "long", "required": true}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2025-02-10 09:56:45.460985'

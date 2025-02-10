@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/HP/Documents/Dagii/week%208%20--9/fraud-detection-models/notebooks/mlruns/0/c8a7328e43f9414caad1355e4efbb643/artifacts
+end_time: 1739179276919
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: c8a7328e43f9414caad1355e4efbb643
+run_name: Random Forest - Fraud Data
+run_uuid: c8a7328e43f9414caad1355e4efbb643
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739179261467
+status: 3
+tags: []
+user_id: SAMI

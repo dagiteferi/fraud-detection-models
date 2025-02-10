@@ -149,24 +149,25 @@ if __name__ == "__main__":
 
 
 # Train and evaluate MLP model for Fraud_Data.csv
-with mlflow.start_run(run_name="MLP - Fraud Data"):
-    mlp_model = MLPClassifier(hidden_layer_sizes=(100,), max_iter=300, alpha=0.0001, solver='adam', random_state=42)
+# with mlflow.start_run(run_name="MLP - Fraud Data"):
+#     mlp_model = MLPClassifier(hidden_layer_sizes=(100,), max_iter=300, alpha=0.0001, solver='adam', random_state=42)
     
-    # Ensure feature data is in float64 to avoid MLflow warnings
-    X_train_fraud = X_train_fraud.astype('float64')
-    X_test_fraud = X_test_fraud.astype('float64')
+#     # Ensure feature data is in float64 to avoid MLflow warnings
+#     X_train_fraud = X_train_fraud.astype('float64')
+#     X_test_fraud = X_test_fraud.astype('float64')
 
-    mlp_model.fit(X_train_fraud, y_train_fraud)
-    y_pred_fraud = mlp_model.predict(X_test_fraud)
+#     mlp_model.fit(X_train_fraud, y_train_fraud)
+#     y_pred_fraud = mlp_model.predict(X_test_fraud)
 
-    # Generate classification report
-    report_fraud = classification_report(y_test_fraud, y_pred_fraud, output_dict=True)
-    accuracy_fraud = report_fraud['accuracy']
+#     # Generate classification report
+#     report_fraud = classification_report(y_test_fraud, y_pred_fraud, output_dict=True)
+#     accuracy_fraud = report_fraud['accuracy']
 
-    # Log parameters, metrics, and model
-    mlflow.log_param("model", "MLP")
-    mlflow.log_metric("accuracy", accuracy_fraud)
-    mlflow.sklearn.log_model(mlp_model, "mlp_model_fraud", input_example=X_test_fraud[:5])
+#     # Log parameters, metrics, and model
+#     mlflow.log_param("model", "MLP")
+#     mlflow.log_metric("accuracy", accuracy_fraud)
+#     mlflow.sklearn.log_model(mlp_model, "mlp_model_fraud", input_example=X_test_fraud[:5])
 
-    # Print classification report
-    print("MLP - Fraud Data:\n", classification_report(y_test_fraud, y_pred_fraud))
+#     # Print classification report
+#     print("MLP - Fraud Data:\n", classification_report(y_test_fraud, y_pred_fraud))
+

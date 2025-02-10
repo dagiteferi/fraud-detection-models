@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/HP/Documents/Dagii/week%208%20--9/fraud-detection-models/notebooks/mlruns/0/8c12bad2869d4a3283e1077908fbbd63/artifacts
+end_time: 1739178810600
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 8c12bad2869d4a3283e1077908fbbd63
+run_name: MLP - Fraud Data
+run_uuid: 8c12bad2869d4a3283e1077908fbbd63
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739178810530
+status: 4
+tags: []
+user_id: SAMI
