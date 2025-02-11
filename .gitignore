@@ -2,3 +2,5 @@ data
 week-8
 src/__pycache__
 __pycache__
+mlruns
+models
