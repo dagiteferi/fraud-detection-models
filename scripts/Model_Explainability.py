@@ -70,16 +70,18 @@ def explain_with_lime(random_forest_model, X_train, y_train, X_test):
         logging.error(f"Error in LIME explanation: {e}")
         print(f"Error in LIME explanation: {e}")
 
-# Example usage:
+# Modular function to set model path and generate explanation
+def generate_lime_explanation(model_path, X_train, y_train, X_test):
+    """
+    Wrapper function to load a model and generate LIME explanations
+    Args:
+        model_path: Path to the saved model
+        X_train: Training data features
+        y_train: Training data labels
+        X_test: Test data features
+    """
+    # Load the model
+    random_forest_model = load_model(model_path)
 
-# Path to your saved model (replace with actual path)
-model_path = 'path_to_saved_model.joblib'
-
-# Load the model
-random_forest_model = load_model(model_path)
-
-# Assuming you already have X_train, y_train, and X_test from your dataset
-# X_train, y_train, X_test should be pandas DataFrames (or numpy arrays) containing your data
-
-# Generate LIME explanations
-explain_with_lime(random_forest_model, X_train, y_train, X_test)
+    # Generate LIME explanations
+    explain_with_lime(random_forest_model, X_train, y_train, X_test)
