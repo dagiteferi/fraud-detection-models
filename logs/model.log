@@ -1,3 +1,42 @@
 2025-02-11 12:58:54,751 - ERROR - Error loading model: [Errno 2] No such file or directory: 'path_to_saved_model.joblib'
 2025-02-11 13:00:11,264 - ERROR - Error loading model: [Errno 2] No such file or directory: 'path_to_saved_model.joblib'
 2025-02-11 13:00:46,993 - ERROR - Error loading model: [Errno 2] No such file or directory: 'path_to_saved_model.joblib'
+2025-02-11 13:08:04,310 - INFO - Directory already exists: c:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\logs
+2025-02-11 13:08:04,312 - INFO - Directory already exists: c:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\data
+2025-02-11 13:08:10,556 - INFO - Attempting to load data from: c:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\data\creditcard.csv
+2025-02-11 13:08:13,239 - INFO - Data successfully loaded from: c:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\data\creditcard.csv
+2025-02-11 13:09:37,211 - INFO - Preparing data by separating features and target column: Class
+2025-02-11 13:09:54,511 - INFO - Preparing data by separating features and target column: Class
+2025-02-11 13:10:19,755 - INFO - Splitting data into train and test sets
+2025-02-11 13:11:08,665 - ERROR - Error loading model: [Errno 2] No such file or directory: 'models/randomforestfor_credit_card_data.pkl'
+2025-02-11 13:12:49,456 - INFO - Model loaded successfully from ../models/randomforestfor_credit_card_data.pkl
+2025-02-11 13:12:49,459 - ERROR - Error in LIME explanation: 'numpy.ndarray' object has no attribute 'values'
+2025-02-11 13:15:08,712 - INFO - Directory already exists: c:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\logs
+2025-02-11 13:15:08,713 - INFO - Directory already exists: c:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\data
+2025-02-11 13:15:08,760 - INFO - Attempting to load data from: c:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\data\creditcard.csv
+2025-02-11 13:15:11,021 - INFO - Data successfully loaded from: c:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\data\creditcard.csv
+2025-02-11 13:15:12,186 - INFO - Preparing data by separating features and target column: Class
+2025-02-11 13:15:12,199 - INFO - Preparing data by separating features and target column: Class
+2025-02-11 13:15:12,785 - INFO - Splitting data into train and test sets
+2025-02-11 13:15:12,852 - INFO - Model loaded successfully from ../models/randomforestfor_credit_card_data.pkl
+2025-02-11 13:15:12,855 - ERROR - Error in LIME explanation: name 'np' is not defined
+2025-02-11 13:16:08,593 - INFO - Directory already exists: c:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\logs
+2025-02-11 13:16:08,594 - INFO - Directory already exists: c:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\data
+2025-02-11 13:16:08,623 - INFO - Attempting to load data from: c:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\data\creditcard.csv
+2025-02-11 13:16:10,961 - INFO - Data successfully loaded from: c:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\data\creditcard.csv
+2025-02-11 13:16:12,118 - INFO - Preparing data by separating features and target column: Class
+2025-02-11 13:16:12,131 - INFO - Preparing data by separating features and target column: Class
+2025-02-11 13:16:12,758 - INFO - Splitting data into train and test sets
+2025-02-11 13:16:12,823 - INFO - Model loaded successfully from ../models/randomforestfor_credit_card_data.pkl
+2025-02-11 13:16:12,827 - ERROR - Error in LIME explanation: name 'pd' is not defined
+2025-02-11 13:16:41,763 - INFO - Directory already exists: c:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\logs
+2025-02-11 13:16:41,765 - INFO - Directory already exists: c:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\data
+2025-02-11 13:16:41,820 - INFO - Attempting to load data from: c:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\data\creditcard.csv
+2025-02-11 13:16:44,257 - INFO - Data successfully loaded from: c:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\data\creditcard.csv
+2025-02-11 13:16:45,831 - INFO - Preparing data by separating features and target column: Class
+2025-02-11 13:16:45,848 - INFO - Preparing data by separating features and target column: Class
+2025-02-11 13:16:46,472 - INFO - Splitting data into train and test sets
+2025-02-11 13:16:46,608 - INFO - Model loaded successfully from ../models/randomforestfor_credit_card_data.pkl
+2025-02-11 13:16:46,940 - INFO - Generating LIME explanation for the first instance.
+2025-02-11 13:16:47,293 - INFO - LIME feature importance for the first instance: [('14 > 0.24', -0.1471582104140763), ('12 > 0.40', -0.10782724697766172), ('-0.50 < 4 <= 0.65', -0.07206666764784644), ('10 > 0.13', -0.061774298150914585), ('-2.04 < 17 <= -0.33', -0.0554669570993999), ('9 > 0.30', -0.03130613377214422), ('1 > 1.11', -0.01314586285249248), ('-3.15 < 3 <= -0.62', 0.011899023440619721), ('0 > 137431.75', 0.010719978439524682), ('-1.22 < 6 <= -0.54', -0.010389499201083435)]
+2025-02-11 13:16:47,306 - INFO - LIME explanation completed successfully.
