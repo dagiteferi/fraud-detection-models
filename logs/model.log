@@ -125,3 +125,10 @@
 2025-02-11 13:45:16,140 - INFO - Attempting to load data from: c:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\data\processed/processed_fraud_data.csv
 2025-02-11 13:45:17,084 - INFO - Data successfully loaded from: c:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\data\processed/processed_fraud_data.csv
 2025-02-11 13:46:12,861 - INFO - Splitting data into train and test sets
+2025-02-11 13:49:27,348 - INFO - Model loaded successfully from ../models/random_forest_model_fraud.pkl
+2025-02-11 13:49:28,034 - ERROR - Error in LIME explanation: 0
+2025-02-11 13:50:48,404 - INFO - Model loaded successfully from ../models/random_forest_model_fraud.pkl
+2025-02-11 13:50:49,008 - ERROR - Error in LIME explanation: 0
+2025-02-11 13:51:00,841 - INFO - Global feature importance plotted successfully.
+2025-02-11 14:03:01,843 - ERROR - Error in generating PDP and ICE plots: The ax was already used in another plot function, please set ax=display.axes_ instead
+2025-02-11 14:03:04,374 - INFO - ROC Curve plotted successfully with AUC = 0.85.
