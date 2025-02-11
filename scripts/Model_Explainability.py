@@ -1,6 +1,3 @@
-# Model_Explainability.py
-
-import shap
 import lime
 from lime.lime_tabular import LimeTabularExplainer
 import matplotlib.pyplot as plt
@@ -18,41 +15,6 @@ logging.basicConfig(
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
 
-def explain_with_shap(random_forest_model, X_test):
-    """
-    Generate SHAP explanations for the Random Forest model
-    Args:
-        random_forest_model: Trained Random Forest model
-        X_test: Test data features
-    """
-    try:
-        # Create a SHAP explainer object
-        explainer = shap.TreeExplainer(random_forest_model)
-        
-        # Calculate SHAP values for the test set
-        shap_values = explainer.shap_values(X_test)
-
-        # Summary Plot
-        logging.info("Generating SHAP summary plot.")
-        shap.summary_plot(shap_values[1], X_test)
-        plt.show()
-
-        # Force Plot for a single prediction (e.g., the first instance)
-        logging.info("Generating SHAP force plot for the first instance.")
-        shap.force_plot(shap_values[1][0], X_test.iloc[0])
-        plt.show()
-
-        # Dependence Plot for a specific feature (e.g., 'Amount')
-        logging.info("Generating SHAP dependence plot for 'Amount'.")
-        shap.dependence_plot('Amount', shap_values[1], X_test)
-        plt.show()
-
-        logging.info("SHAP explanation completed successfully.")
-        print("SHAP explanation completed successfully.")
-    except Exception as e:
-        logging.error(f"Error in SHAP explanation: {e}")
-        print(f"Error in SHAP explanation: {e}")
-
 def explain_with_lime(random_forest_model, X_train, y_train, X_test):
     """
     Generate LIME explanations for the Random Forest model
@@ -64,7 +26,14 @@ def explain_with_lime(random_forest_model, X_train, y_train, X_test):
     """
     try:
         # Create a LIME explainer
-        explainer_lime = LimeTabularExplainer(X_train.values, training_labels=y_train, mode='classification', training_mode='regression')
+        explainer_lime = LimeTabularExplainer(
+            X_train.values, 
+            training_labels=y_train.values, 
+            mode='classification', 
+            feature_names=X_train.columns,
+            class_names=["Non-Fraud", "Fraud"],  # Class names for fraud detection
+            discretize_continuous=True
+        )
         
         # Explain a single instance (e.g., the first test instance)
         explanation = explainer_lime.explain_instance(X_test.iloc[0].values, random_forest_model.predict_proba)
