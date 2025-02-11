@@ -4,3 +4,5 @@ seaborn
 scikit-learn
 mlflow
 imbalanced-learn
+shap 
+lime 
