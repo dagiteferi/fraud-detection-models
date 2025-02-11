@@ -120,3 +120,7 @@
 2025-02-11 13:39:28,001 - ERROR - Error in generating PDP and ICE plots: 'numpy.ndarray' object has no attribute 'columns'
 2025-02-11 13:39:29,286 - INFO - ROC Curve plotted successfully with AUC = 1.00.
 2025-02-11 13:39:47,180 - INFO - ROC Curve plotted successfully with AUC = 1.00.
+2025-02-11 13:45:13,604 - INFO - Attempting to load data from: c:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\data\creditcard.csv
+2025-02-11 13:45:16,130 - INFO - Data successfully loaded from: c:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\data\creditcard.csv
+2025-02-11 13:45:16,140 - INFO - Attempting to load data from: c:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\data\processed/processed_fraud_data.csv
+2025-02-11 13:45:17,084 - INFO - Data successfully loaded from: c:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\data\processed/processed_fraud_data.csv
