@@ -25,12 +25,12 @@ logging.basicConfig(
     ]
 )
 
-# Prepare data function
 def prepare_data(df, target_column):
     logger.info(f"Preparing data by separating features and target column: {target_column}")
     X = df.drop(columns=[target_column])
-    y = df[target_column]
+    y = df[target_column].astype(int)  # Ensure y remains integer
     return X, y
+
 
 # Split data function
 def split_data(X, y, test_size=0.2, random_state=42):
