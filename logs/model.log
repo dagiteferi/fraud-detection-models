@@ -124,3 +124,4 @@
 2025-02-11 13:45:16,130 - INFO - Data successfully loaded from: c:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\data\creditcard.csv
 2025-02-11 13:45:16,140 - INFO - Attempting to load data from: c:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\data\processed/processed_fraud_data.csv
 2025-02-11 13:45:17,084 - INFO - Data successfully loaded from: c:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\data\processed/processed_fraud_data.csv
+2025-02-11 13:46:12,861 - INFO - Splitting data into train and test sets
