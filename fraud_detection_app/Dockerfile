@@ -4,7 +4,7 @@ FROM python:3.8-slim
 # Set the working directory in the container
 WORKDIR /app
 
-# Copy all files from the current directory to the container
+# Copy the current directory contents (including the models folder) into the container
 COPY . .
 
 # Install dependencies
@@ -14,4 +14,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 5000
 
 # Command to run the Flask app
-CMD ["python", "serve_model.py"]
+CMD ["python", "fraud_detection_app/serve_model.py"]
