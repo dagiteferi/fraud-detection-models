@@ -1,6 +1,6 @@
-import pickle
-import logging
 import os
+import joblib
+import logging
 import numpy as np
 import pandas as pd
 from flask import Flask, request, jsonify
@@ -9,12 +9,9 @@ from flask import Flask, request, jsonify
 FRAUD_MODEL_PATH = os.path.join("models", "random_forest_model_fraud.pkl")
 CREDIT_CARD_MODEL_PATH = os.path.join("models", "randomforestfor_credit_card_data.pkl")
 
-# Load the models
-with open(FRAUD_MODEL_PATH, "rb") as f:
-    fraud_model = pickle.load(f)
-
-with open(CREDIT_CARD_MODEL_PATH, "rb") as f:
-    credit_card_model = pickle.load(f)
+# Load models using joblib
+fraud_model = joblib.load(FRAUD_MODEL_PATH)
+credit_card_model = joblib.load(CREDIT_CARD_MODEL_PATH)
 
 # Initialize Flask app
 app = Flask(__name__)
