@@ -5,3 +5,34 @@
 2025-02-12 14:34:57,256 INFO: [33mPress CTRL+C to quit[0m
 2025-02-12 14:35:58,279 INFO: 127.0.0.1 - - [12/Feb/2025 14:35:58] "GET / HTTP/1.1" 200 -
 2025-02-12 14:35:58,364 INFO: 127.0.0.1 - - [12/Feb/2025 14:35:58] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-02-12 14:38:13,068 INFO: 127.0.0.1 - - [12/Feb/2025 14:38:13] "[31m[1mGET /predict HTTP/1.1[0m" 405 -
+2025-02-12 14:38:44,586 INFO: 127.0.0.1 - - [12/Feb/2025 14:38:44] "[31m[1mGET /predict HTTP/1.1[0m" 405 -
+2025-02-12 14:38:47,363 INFO: 127.0.0.1 - - [12/Feb/2025 14:38:47] "[31m[1mGET /predict HTTP/1.1[0m" 405 -
+2025-02-12 14:54:34,919 INFO: 127.0.0.1 - - [12/Feb/2025 14:54:34] "[31m[1mGET /predict HTTP/1.1[0m" 405 -
+2025-02-12 14:54:35,189 INFO: 127.0.0.1 - - [12/Feb/2025 14:54:35] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-02-12 14:57:50,120 INFO: 127.0.0.1 - - [12/Feb/2025 14:57:50] "GET / HTTP/1.1" 200 -
+2025-02-12 15:02:44,393 ERROR: Error: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- feature1
+- feature2
+- feature3
+Feature names seen at fit time, yet now missing:
+- age
+- browser_FireFox
+- browser_IE
+- browser_Opera
+- browser_Safari
+- ...
+
+2025-02-12 15:02:44,394 INFO: 127.0.0.1 - - [12/Feb/2025 15:02:44] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -
+2025-02-12 15:10:02,321 ERROR: Error: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2025-02-12 15:10:02,321 INFO: 127.0.0.1 - - [12/Feb/2025 15:10:02] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -
+2025-02-12 15:11:39,713 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.7:5000
+2025-02-12 15:11:39,713 INFO: [33mPress CTRL+C to quit[0m
+2025-02-12 15:12:03,203 INFO: 127.0.0.1 - - [12/Feb/2025 15:12:03] "GET / HTTP/1.1" 200 -
+2025-02-12 15:12:12,175 INFO: 127.0.0.1 - - [12/Feb/2025 15:12:12] "[31m[1mGET /predict HTTP/1.1[0m" 405 -
+2025-02-12 15:12:12,550 INFO: 127.0.0.1 - - [12/Feb/2025 15:12:12] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-02-12 15:12:21,731 INFO: 127.0.0.1 - - [12/Feb/2025 15:12:21] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -

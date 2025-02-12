@@ -25,41 +25,33 @@ def home():
     return jsonify({"message": "Fraud Detection API is running!"})
 
 @app.route("/predict", methods=["POST"])
+@app.route("/predict", methods=["POST"])
 def predict():
     try:
-        # Get JSON data from request
-        data = request.get_json()
-
-        # Check if model type is provided
+        data = request.get_json()  # Get input data from request
         model_type = data.get("model_type")
-        if model_type not in ["fraud", "credit_card"]:
-            return jsonify({"error": "Invalid model_type. Use 'fraud' or 'credit_card'"}), 400
-        
-        # Extract features (remove model_type from input)
+
+        if model_type not in ["fraud"]:
+            return jsonify({"error": "Invalid model type"}), 400
+
+        # Extract features from the request (remove model_type)
         features = {k: v for k, v in data.items() if k != "model_type"}
 
-        # Convert JSON to DataFrame
+        # Convert the features to a DataFrame, assuming the order matches X_train columns
         df = pd.DataFrame([features])
 
-        # Check for missing values
-        if df.isnull().values.any():
-            return jsonify({"error": "Missing values in input"}), 400
-
-        # Select the appropriate model
-        model = fraud_model if model_type == "fraud" else credit_card_model
-
         # Make prediction
-        prediction = model.predict(df)
-        proba = model.predict_proba(df)[:, 1]  # Probability of fraud
+        prediction = fraud_model.predict(df)
+        proba = fraud_model.predict_proba(df)[:, 1]  # Probability of fraud
 
-        # Log the request
-        logging.info(f"Model: {model_type}, Input: {features}, Prediction: {prediction[0]}, Probability: {proba[0]:.4f}")
-
-        return jsonify({"model_used": model_type, "fraud_prediction": int(prediction[0]), "fraud_probability": round(proba[0], 4)})
+        return jsonify({
+            "model_used": model_type,
+            "fraud_prediction": int(prediction[0]),
+            "fraud_probability": round(proba[0], 4)
+        })
 
     except Exception as e:
-        logging.error(f"Error: {str(e)}")
-        return jsonify({"error": "Internal Server Error"}), 500
+        return jsonify({"error": str(e)}), 500
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)

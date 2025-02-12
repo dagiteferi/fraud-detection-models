@@ -1,0 +1,27 @@
+POST http://127.0.0.1:5000/predict
+Content-Type: application/json
+
+{
+  {
+    "model_type": "fraud",
+    "user_id": 24952,
+    "purchase_value": 0.494721,
+    "age": -0.712568,
+    "class": 1,
+    "hour_of_day": 0.937208,
+    "day_of_week": 0.492565,
+    "purchase_delay": -1.577617,
+    "user_transaction_frequency": 0.0,
+    "device_transaction_frequency": 3.177611,
+    "user_transaction_velocity": 4.345476,
+    "source_Direct": 0,
+    "source_SEO": 1,
+    "browser_FireFox": 0,
+    "browser_IE": 0,
+    "browser_Opera": 1,
+    "browser_Safari": 0,
+    "sex_M": 1
+}
+
+
+}
