@@ -25,13 +25,12 @@ def home():
     return jsonify({"message": "Fraud Detection API is running!"})
 
 @app.route("/predict", methods=["POST"])
-@app.route("/predict", methods=["POST"])
 def predict():
     try:
         data = request.get_json()  # Get input data from request
         model_type = data.get("model_type")
 
-        if model_type not in ["fraud"]:
+        if model_type not in ["fraud", "credit_card"]:
             return jsonify({"error": "Invalid model type"}), 400
 
         # Extract features from the request (remove model_type)
@@ -40,9 +39,13 @@ def predict():
         # Convert the features to a DataFrame, assuming the order matches X_train columns
         df = pd.DataFrame([features])
 
-        # Make prediction
-        prediction = fraud_model.predict(df)
-        proba = fraud_model.predict_proba(df)[:, 1]  # Probability of fraud
+        # Make prediction based on model type
+        if model_type == "fraud":
+            prediction = fraud_model.predict(df)
+            proba = fraud_model.predict_proba(df)[:, 1]  # Probability of fraud
+        elif model_type == "credit_card":
+            prediction = credit_card_model.predict(df)
+            proba = credit_card_model.predict_proba(df)[:, 1]  # Probability of fraud for credit card
 
         return jsonify({
             "model_used": model_type,
