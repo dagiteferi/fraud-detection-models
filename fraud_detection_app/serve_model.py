@@ -6,8 +6,8 @@ import pandas as pd
 from flask import Flask, request, jsonify
 
 # Define model paths
-FRAUD_MODEL_PATH = os.path.join("models", "fraud_model.pkl")
-CREDIT_CARD_MODEL_PATH = os.path.join("models", "credit_card_model.pkl")
+FRAUD_MODEL_PATH = os.path.join("models", "random_forest_model_fraud.pkl")
+CREDIT_CARD_MODEL_PATH = os.path.join("models", "randomforestfor_credit_card_data.pkl")
 
 # Load the models
 with open(FRAUD_MODEL_PATH, "rb") as f:
