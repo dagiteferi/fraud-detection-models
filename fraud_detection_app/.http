@@ -2,12 +2,11 @@ POST http://127.0.0.1:5000/predict
 Content-Type: application/json
 
 {
-  {
+ {
     "model_type": "fraud",
     "user_id": 24952,
     "purchase_value": 0.494721,
     "age": -0.712568,
-    "class": 1,
     "hour_of_day": 0.937208,
     "day_of_week": 0.492565,
     "purchase_delay": -1.577617,
@@ -23,5 +22,6 @@ Content-Type: application/json
     "sex_M": 1
 }
 
+//test the API
 
 }
