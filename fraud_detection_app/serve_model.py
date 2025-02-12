@@ -1,14 +1,19 @@
 import pickle
 import logging
+import os
 import numpy as np
 import pandas as pd
 from flask import Flask, request, jsonify
 
+# Define model paths
+FRAUD_MODEL_PATH = os.path.join("models", "fraud_model.pkl")
+CREDIT_CARD_MODEL_PATH = os.path.join("models", "credit_card_model.pkl")
+
 # Load the models
-with open("fraud_model.pkl", "rb") as f:
+with open(FRAUD_MODEL_PATH, "rb") as f:
     fraud_model = pickle.load(f)
 
-with open("credit_card_model.pkl", "rb") as f:
+with open(CREDIT_CARD_MODEL_PATH, "rb") as f:
     credit_card_model = pickle.load(f)
 
 # Initialize Flask app
