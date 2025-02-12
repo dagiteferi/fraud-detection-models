@@ -22,7 +22,7 @@ Content-Type: application/json
     "sex_M": 1
 }
 
-//test the API
+//test the API for the fraud data set
 
 }
 
@@ -53,7 +53,7 @@ Content-Type: application/json
     "V19": true
 }
 
-//test the API
+//test the API for credit_card
 
 }
 
