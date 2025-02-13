@@ -15,4 +15,4 @@ COPY ../models/ ./models/
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Command to run the application
-CMD ["python", "app.py"]
+CMD ["python", "serve_model.py"]
