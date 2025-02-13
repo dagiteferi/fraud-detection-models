@@ -1,20 +1,18 @@
-# Use an official Python runtime as the base image
+# Use the official Python image
 FROM python:3.8-slim
 
-# Set the working directory in the container
+# Set the working directory
 WORKDIR /app
 
-# Copy the fraud_detection_app directory contents into /app in the container
-COPY fraud_detection_app/ .
+# Copy the application code (from the fraud_detection_app directory)
+COPY . .  
+# Now copies files from fraud_detection_app/ to /app
 
-# Copy the models directory into /app/models
+# Copy the models directory (from the parent directory of the build context)
 COPY ../models/ ./models/
 
 # Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Expose port 5000 (Flask default port)
-EXPOSE 5000
-
-# Command to run the Flask app
-CMD ["python", "serve_model.py"]
+# Command to run the application
+CMD ["python", "app.py"]
