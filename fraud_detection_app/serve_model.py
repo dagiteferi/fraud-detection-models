@@ -7,11 +7,11 @@ from flask import Flask, request, jsonify
 
 # Define model paths
 # Define model paths (adjusted for Docker container)
-FRAUD_MODEL_PATH = os.path.join( "models", "random_forest_model_fraud.pkl")
-CREDIT_CARD_MODEL_PATH = os.path.join( "models", "randomforestfor_credit_card_data.pkl")
+FRAUD_MODEL_PATH = os.path.join("models", "random_forest_model_fraud.pkl")
+CREDIT_CARD_MODEL_PATH = os.path.join("models", "randomforestfor_credit_card_data.pkl")
 
 
-# Load models using joblib
+# Load the model
 fraud_model = joblib.load(FRAUD_MODEL_PATH)
 credit_card_model = joblib.load(CREDIT_CARD_MODEL_PATH)
 
