@@ -872,3 +872,811 @@ KeyError: 'Value based partial slicing on non-monotonic DatetimeIndexes with non
 2025-02-14 15:59:09,924 INFO: 127.0.0.1 - - [14/Feb/2025 15:59:09] "[36mGET /dashboard/_dash-component-suites/dash/dcc/async-graph.js HTTP/1.1[0m" 304 -
 2025-02-14 15:59:09,935 INFO: 127.0.0.1 - - [14/Feb/2025 15:59:09] "[36mGET /dashboard/_dash-component-suites/plotly/package_data/plotly.min.js HTTP/1.1[0m" 304 -
 2025-02-14 15:59:10,049 INFO: 127.0.0.1 - - [14/Feb/2025 15:59:10] "POST /dashboard/_dash-update-component HTTP/1.1" 200 -
+2025-02-14 16:04:12,721 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.2:5000
+2025-02-14 16:04:12,721 INFO: [33mPress CTRL+C to quit[0m
+2025-02-14 16:04:17,591 INFO: 127.0.0.1 - - [14/Feb/2025 16:04:17] "GET /dashboard/ HTTP/1.1" 200 -
+2025-02-14 16:04:17,604 INFO: 127.0.0.1 - - [14/Feb/2025 16:04:17] "GET /dashboard/assets/styles.css?m=1739532606.1276817 HTTP/1.1" 200 -
+2025-02-14 16:04:17,836 INFO: 127.0.0.1 - - [14/Feb/2025 16:04:17] "GET /dashboard/_dash-component-suites/dash/deps/polyfill@7.v2_18_2m1739530123.12.1.min.js HTTP/1.1" 200 -
+2025-02-14 16:04:17,919 INFO: 127.0.0.1 - - [14/Feb/2025 16:04:17] "GET /dashboard/_dash-component-suites/dash/deps/prop-types@15.v2_18_2m1739530123.8.1.min.js HTTP/1.1" 200 -
+2025-02-14 16:04:17,920 INFO: 127.0.0.1 - - [14/Feb/2025 16:04:17] "GET /dashboard/_dash-component-suites/dash/deps/react-dom@16.v2_18_2m1739530123.14.0.min.js HTTP/1.1" 200 -
+2025-02-14 16:04:17,921 INFO: 127.0.0.1 - - [14/Feb/2025 16:04:17] "GET /dashboard/_dash-component-suites/dash/deps/react@16.v2_18_2m1739530123.14.0.min.js HTTP/1.1" 200 -
+2025-02-14 16:04:17,923 INFO: 127.0.0.1 - - [14/Feb/2025 16:04:17] "GET /dashboard/assets/scripts.js?m=1739532606.1276817 HTTP/1.1" 200 -
+2025-02-14 16:04:17,928 INFO: 127.0.0.1 - - [14/Feb/2025 16:04:17] "GET /dashboard/_dash-component-suites/dash/dash-renderer/build/dash_renderer.v2_18_2m1739530123.min.js HTTP/1.1" 200 -
+2025-02-14 16:04:18,151 INFO: 127.0.0.1 - - [14/Feb/2025 16:04:18] "GET /dashboard/_dash-component-suites/dash/dcc/dash_core_components.v2_14_3m1739530123.js HTTP/1.1" 200 -
+2025-02-14 16:04:18,235 INFO: 127.0.0.1 - - [14/Feb/2025 16:04:18] "GET /dashboard/_dash-component-suites/dash/dcc/dash_core_components-shared.v2_14_3m1739530123.js HTTP/1.1" 200 -
+2025-02-14 16:04:18,236 INFO: 127.0.0.1 - - [14/Feb/2025 16:04:18] "GET /dashboard/_dash-component-suites/dash/html/dash_html_components.v2_0_20m1739530123.min.js HTTP/1.1" 200 -
+2025-02-14 16:04:18,237 INFO: 127.0.0.1 - - [14/Feb/2025 16:04:18] "GET /dashboard/_dash-component-suites/dash/dash_table/bundle.v5_2_13m1739530123.js HTTP/1.1" 200 -
+2025-02-14 16:04:18,567 INFO: 127.0.0.1 - - [14/Feb/2025 16:04:18] "GET /dashboard/_dash-dependencies HTTP/1.1" 200 -
+2025-02-14 16:04:18,569 INFO: 127.0.0.1 - - [14/Feb/2025 16:04:18] "GET /dashboard/_favicon.ico?v=2.18.2 HTTP/1.1" 200 -
+2025-02-14 16:04:18,570 INFO: 127.0.0.1 - - [14/Feb/2025 16:04:18] "GET /dashboard/_dash-layout HTTP/1.1" 200 -
+2025-02-14 16:04:18,819 ERROR: Exception on /dashboard/_dash-update-component [POST]
+Traceback (most recent call last):
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\dash.py", line 1376, in dispatch
+    ctx.run(
+    ~~~~~~~^
+        functools.partial(
+        ^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+        )
+        ^
+    )
+    ^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\_callback.py", line 507, in add_context
+    raise err
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\_callback.py", line 496, in add_context
+    output_value = _invoke_callback(func, *func_args, **func_kwargs)
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\_callback.py", line 43, in _invoke_callback
+    return func(*args, **kwargs)  # %% callback invoked %%
+  File "c:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\fraud_detection_app\serve_model.py", line 176, in update_dashboard
+    filtered_data = fraud_data.loc[start_date:end_date]
+                    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexing.py", line 1191, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexing.py", line 1411, in _getitem_axis
+    return self._get_slice_axis(key, axis=axis)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexing.py", line 1443, in _get_slice_axis
+    indexer = labels.slice_indexer(slice_obj.start, slice_obj.stop, slice_obj.step)
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexes\datetimes.py", line 697, in slice_indexer
+    raise KeyError(
+    ...<2 lines>...
+    )
+KeyError: 'Value based partial slicing on non-monotonic DatetimeIndexes with non-existing keys is not allowed.'
+2025-02-14 16:04:18,824 INFO: 127.0.0.1 - - [14/Feb/2025 16:04:18] "[35m[1mPOST /dashboard/_dash-update-component HTTP/1.1[0m" 500 -
+2025-02-14 16:04:18,883 INFO: 127.0.0.1 - - [14/Feb/2025 16:04:18] "[36mGET /dashboard/_dash-component-suites/dash/dcc/async-dropdown.js HTTP/1.1[0m" 304 -
+2025-02-14 16:04:18,884 INFO: 127.0.0.1 - - [14/Feb/2025 16:04:18] "[36mGET /dashboard/_dash-component-suites/dash/dcc/async-datepicker.js HTTP/1.1[0m" 304 -
+2025-02-14 16:04:18,889 INFO: 127.0.0.1 - - [14/Feb/2025 16:04:18] "[36mGET /dashboard/_dash-component-suites/dash/dcc/async-graph.js HTTP/1.1[0m" 304 -
+2025-02-14 16:04:18,899 INFO: 127.0.0.1 - - [14/Feb/2025 16:04:18] "[36mGET /dashboard/_dash-component-suites/plotly/package_data/plotly.min.js HTTP/1.1[0m" 304 -
+2025-02-14 16:04:18,961 INFO: 127.0.0.1 - - [14/Feb/2025 16:04:18] "GET /dashboard/_dash-component-suites/dash/dcc/async-slider.js HTTP/1.1" 200 -
+2025-02-14 16:04:27,504 ERROR: Exception on /dashboard/_dash-update-component [POST]
+Traceback (most recent call last):
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\dash.py", line 1376, in dispatch
+    ctx.run(
+    ~~~~~~~^
+        functools.partial(
+        ^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+        )
+        ^
+    )
+    ^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\_callback.py", line 507, in add_context
+    raise err
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\_callback.py", line 496, in add_context
+    output_value = _invoke_callback(func, *func_args, **func_kwargs)
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\_callback.py", line 43, in _invoke_callback
+    return func(*args, **kwargs)  # %% callback invoked %%
+  File "c:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\fraud_detection_app\serve_model.py", line 176, in update_dashboard
+    filtered_data = fraud_data.loc[start_date:end_date]
+                    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexing.py", line 1191, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexing.py", line 1411, in _getitem_axis
+    return self._get_slice_axis(key, axis=axis)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexing.py", line 1443, in _get_slice_axis
+    indexer = labels.slice_indexer(slice_obj.start, slice_obj.stop, slice_obj.step)
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexes\datetimes.py", line 697, in slice_indexer
+    raise KeyError(
+    ...<2 lines>...
+    )
+KeyError: 'Value based partial slicing on non-monotonic DatetimeIndexes with non-existing keys is not allowed.'
+2025-02-14 16:04:27,506 INFO: 127.0.0.1 - - [14/Feb/2025 16:04:27] "[35m[1mPOST /dashboard/_dash-update-component HTTP/1.1[0m" 500 -
+2025-02-14 16:04:31,488 ERROR: Exception on /dashboard/_dash-update-component [POST]
+Traceback (most recent call last):
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\dash.py", line 1376, in dispatch
+    ctx.run(
+    ~~~~~~~^
+        functools.partial(
+        ^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+        )
+        ^
+    )
+    ^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\_callback.py", line 507, in add_context
+    raise err
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\_callback.py", line 496, in add_context
+    output_value = _invoke_callback(func, *func_args, **func_kwargs)
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\_callback.py", line 43, in _invoke_callback
+    return func(*args, **kwargs)  # %% callback invoked %%
+  File "c:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\fraud_detection_app\serve_model.py", line 176, in update_dashboard
+    filtered_data = fraud_data.loc[start_date:end_date]
+                    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexing.py", line 1191, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexing.py", line 1411, in _getitem_axis
+    return self._get_slice_axis(key, axis=axis)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexing.py", line 1443, in _get_slice_axis
+    indexer = labels.slice_indexer(slice_obj.start, slice_obj.stop, slice_obj.step)
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexes\datetimes.py", line 697, in slice_indexer
+    raise KeyError(
+    ...<2 lines>...
+    )
+KeyError: 'Value based partial slicing on non-monotonic DatetimeIndexes with non-existing keys is not allowed.'
+2025-02-14 16:04:31,491 INFO: 127.0.0.1 - - [14/Feb/2025 16:04:31] "[35m[1mPOST /dashboard/_dash-update-component HTTP/1.1[0m" 500 -
+2025-02-14 16:04:37,552 ERROR: Exception on /dashboard/_dash-update-component [POST]
+Traceback (most recent call last):
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\dash.py", line 1376, in dispatch
+    ctx.run(
+    ~~~~~~~^
+        functools.partial(
+        ^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+        )
+        ^
+    )
+    ^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\_callback.py", line 507, in add_context
+    raise err
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\_callback.py", line 496, in add_context
+    output_value = _invoke_callback(func, *func_args, **func_kwargs)
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\_callback.py", line 43, in _invoke_callback
+    return func(*args, **kwargs)  # %% callback invoked %%
+  File "c:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\fraud_detection_app\serve_model.py", line 176, in update_dashboard
+    filtered_data = fraud_data.loc[start_date:end_date]
+                    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexing.py", line 1191, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexing.py", line 1411, in _getitem_axis
+    return self._get_slice_axis(key, axis=axis)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexing.py", line 1443, in _get_slice_axis
+    indexer = labels.slice_indexer(slice_obj.start, slice_obj.stop, slice_obj.step)
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexes\datetimes.py", line 697, in slice_indexer
+    raise KeyError(
+    ...<2 lines>...
+    )
+KeyError: 'Value based partial slicing on non-monotonic DatetimeIndexes with non-existing keys is not allowed.'
+2025-02-14 16:04:37,555 INFO: 127.0.0.1 - - [14/Feb/2025 16:04:37] "[35m[1mPOST /dashboard/_dash-update-component HTTP/1.1[0m" 500 -
+2025-02-14 16:04:41,221 ERROR: Exception on /dashboard/_dash-update-component [POST]
+Traceback (most recent call last):
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\dash.py", line 1376, in dispatch
+    ctx.run(
+    ~~~~~~~^
+        functools.partial(
+        ^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+        )
+        ^
+    )
+    ^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\_callback.py", line 507, in add_context
+    raise err
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\_callback.py", line 496, in add_context
+    output_value = _invoke_callback(func, *func_args, **func_kwargs)
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\_callback.py", line 43, in _invoke_callback
+    return func(*args, **kwargs)  # %% callback invoked %%
+  File "c:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\fraud_detection_app\serve_model.py", line 176, in update_dashboard
+    filtered_data = fraud_data.loc[start_date:end_date]
+                    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexing.py", line 1191, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexing.py", line 1411, in _getitem_axis
+    return self._get_slice_axis(key, axis=axis)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexing.py", line 1443, in _get_slice_axis
+    indexer = labels.slice_indexer(slice_obj.start, slice_obj.stop, slice_obj.step)
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexes\datetimes.py", line 697, in slice_indexer
+    raise KeyError(
+    ...<2 lines>...
+    )
+KeyError: 'Value based partial slicing on non-monotonic DatetimeIndexes with non-existing keys is not allowed.'
+2025-02-14 16:04:41,224 INFO: 127.0.0.1 - - [14/Feb/2025 16:04:41] "[35m[1mPOST /dashboard/_dash-update-component HTTP/1.1[0m" 500 -
+2025-02-14 16:04:42,775 ERROR: Exception on /dashboard/_dash-update-component [POST]
+Traceback (most recent call last):
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\dash.py", line 1376, in dispatch
+    ctx.run(
+    ~~~~~~~^
+        functools.partial(
+        ^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+        )
+        ^
+    )
+    ^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\_callback.py", line 507, in add_context
+    raise err
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\_callback.py", line 496, in add_context
+    output_value = _invoke_callback(func, *func_args, **func_kwargs)
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\_callback.py", line 43, in _invoke_callback
+    return func(*args, **kwargs)  # %% callback invoked %%
+  File "c:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\fraud_detection_app\serve_model.py", line 176, in update_dashboard
+    filtered_data = fraud_data.loc[start_date:end_date]
+                    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexing.py", line 1191, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexing.py", line 1411, in _getitem_axis
+    return self._get_slice_axis(key, axis=axis)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexing.py", line 1443, in _get_slice_axis
+    indexer = labels.slice_indexer(slice_obj.start, slice_obj.stop, slice_obj.step)
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexes\datetimes.py", line 697, in slice_indexer
+    raise KeyError(
+    ...<2 lines>...
+    )
+KeyError: 'Value based partial slicing on non-monotonic DatetimeIndexes with non-existing keys is not allowed.'
+2025-02-14 16:04:42,778 INFO: 127.0.0.1 - - [14/Feb/2025 16:04:42] "[35m[1mPOST /dashboard/_dash-update-component HTTP/1.1[0m" 500 -
+2025-02-14 16:05:03,117 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.2:5000
+2025-02-14 16:05:03,117 INFO: [33mPress CTRL+C to quit[0m
+2025-02-14 16:05:05,638 INFO: 127.0.0.1 - - [14/Feb/2025 16:05:05] "GET /dashboard/ HTTP/1.1" 200 -
+2025-02-14 16:05:05,647 INFO: 127.0.0.1 - - [14/Feb/2025 16:05:05] "[36mGET /dashboard/assets/styles.css?m=1739532606.1276817 HTTP/1.1[0m" 304 -
+2025-02-14 16:05:05,896 INFO: 127.0.0.1 - - [14/Feb/2025 16:05:05] "[36mGET /dashboard/assets/scripts.js?m=1739532606.1276817 HTTP/1.1[0m" 304 -
+2025-02-14 16:05:06,247 INFO: 127.0.0.1 - - [14/Feb/2025 16:05:06] "GET /dashboard/_dash-layout HTTP/1.1" 200 -
+2025-02-14 16:05:06,247 INFO: 127.0.0.1 - - [14/Feb/2025 16:05:06] "GET /dashboard/_dash-dependencies HTTP/1.1" 200 -
+2025-02-14 16:05:06,251 INFO: 127.0.0.1 - - [14/Feb/2025 16:05:06] "GET /dashboard/_favicon.ico?v=2.18.2 HTTP/1.1" 200 -
+2025-02-14 16:05:06,576 INFO: 127.0.0.1 - - [14/Feb/2025 16:05:06] "[36mGET /dashboard/_dash-component-suites/dash/dcc/async-graph.js HTTP/1.1[0m" 304 -
+2025-02-14 16:05:06,620 INFO: 127.0.0.1 - - [14/Feb/2025 16:05:06] "[36mGET /dashboard/_dash-component-suites/plotly/package_data/plotly.min.js HTTP/1.1[0m" 304 -
+2025-02-14 16:05:06,765 INFO: 127.0.0.1 - - [14/Feb/2025 16:05:06] "POST /dashboard/_dash-update-component HTTP/1.1" 200 -
+2025-02-14 16:05:29,278 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.2:5000
+2025-02-14 16:05:29,278 INFO: [33mPress CTRL+C to quit[0m
+2025-02-14 16:05:33,962 INFO: 127.0.0.1 - - [14/Feb/2025 16:05:33] "GET /dashboard/ HTTP/1.1" 200 -
+2025-02-14 16:05:35,893 INFO: 127.0.0.1 - - [14/Feb/2025 16:05:35] "GET /dashboard/assets/styles.css?m=1739532606.1276817 HTTP/1.1" 200 -
+2025-02-14 16:05:35,909 INFO: 127.0.0.1 - - [14/Feb/2025 16:05:35] "GET /dashboard/_dash-component-suites/dash/deps/polyfill@7.v2_18_2m1739530123.12.1.min.js HTTP/1.1" 200 -
+2025-02-14 16:05:36,331 INFO: 127.0.0.1 - - [14/Feb/2025 16:05:36] "GET /dashboard/_dash-component-suites/dash/deps/react@16.v2_18_2m1739530123.14.0.min.js HTTP/1.1" 200 -
+2025-02-14 16:05:36,415 INFO: 127.0.0.1 - - [14/Feb/2025 16:05:36] "GET /dashboard/_dash-component-suites/dash/deps/prop-types@15.v2_18_2m1739530123.8.1.min.js HTTP/1.1" 200 -
+2025-02-14 16:05:36,576 INFO: 127.0.0.1 - - [14/Feb/2025 16:05:36] "GET /dashboard/_dash-component-suites/dash/deps/react-dom@16.v2_18_2m1739530123.14.0.min.js HTTP/1.1" 200 -
+2025-02-14 16:05:36,712 INFO: 127.0.0.1 - - [14/Feb/2025 16:05:36] "GET /dashboard/assets/scripts.js?m=1739532606.1276817 HTTP/1.1" 200 -
+2025-02-14 16:05:38,128 INFO: 127.0.0.1 - - [14/Feb/2025 16:05:38] "GET /dashboard/_dash-component-suites/dash/dash-renderer/build/dash_renderer.v2_18_2m1739530123.min.js HTTP/1.1" 200 -
+2025-02-14 16:05:38,276 INFO: 127.0.0.1 - - [14/Feb/2025 16:05:38] "GET /dashboard/_dash-component-suites/dash/dcc/dash_core_components.v2_14_3m1739530123.js HTTP/1.1" 200 -
+2025-02-14 16:05:38,512 INFO: 127.0.0.1 - - [14/Feb/2025 16:05:38] "GET /dashboard/_dash-component-suites/dash/dcc/dash_core_components-shared.v2_14_3m1739530123.js HTTP/1.1" 200 -
+2025-02-14 16:05:38,575 INFO: 127.0.0.1 - - [14/Feb/2025 16:05:38] "GET /dashboard/_dash-component-suites/dash/html/dash_html_components.v2_0_20m1739530123.min.js HTTP/1.1" 200 -
+2025-02-14 16:05:38,723 INFO: 127.0.0.1 - - [14/Feb/2025 16:05:38] "GET /dashboard/_dash-component-suites/dash/dash_table/bundle.v5_2_13m1739530123.js HTTP/1.1" 200 -
+2025-02-14 16:05:40,072 INFO: 127.0.0.1 - - [14/Feb/2025 16:05:40] "GET /dashboard/_dash-layout HTTP/1.1" 200 -
+2025-02-14 16:05:40,245 INFO: 127.0.0.1 - - [14/Feb/2025 16:05:40] "GET /dashboard/_dash-dependencies HTTP/1.1" 200 -
+2025-02-14 16:05:40,370 INFO: 127.0.0.1 - - [14/Feb/2025 16:05:40] "GET /dashboard/_favicon.ico?v=2.18.2 HTTP/1.1" 200 -
+2025-02-14 16:05:41,330 INFO: 127.0.0.1 - - [14/Feb/2025 16:05:41] "[36mGET /dashboard/_dash-component-suites/dash/dcc/async-graph.js HTTP/1.1[0m" 304 -
+2025-02-14 16:05:41,581 INFO: 127.0.0.1 - - [14/Feb/2025 16:05:41] "[36mGET /dashboard/_dash-component-suites/plotly/package_data/plotly.min.js HTTP/1.1[0m" 304 -
+2025-02-14 16:05:42,009 INFO: 127.0.0.1 - - [14/Feb/2025 16:05:42] "POST /dashboard/_dash-update-component HTTP/1.1" 200 -
+2025-02-14 16:11:50,478 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.2:5000
+2025-02-14 16:11:50,478 INFO: [33mPress CTRL+C to quit[0m
+2025-02-14 16:11:55,924 INFO: 127.0.0.1 - - [14/Feb/2025 16:11:55] "GET /dashboard/ HTTP/1.1" 200 -
+2025-02-14 16:11:55,934 INFO: 127.0.0.1 - - [14/Feb/2025 16:11:55] "GET /dashboard/assets/styles.css?m=1739532606.1276817 HTTP/1.1" 200 -
+2025-02-14 16:11:56,168 INFO: 127.0.0.1 - - [14/Feb/2025 16:11:56] "GET /dashboard/_dash-component-suites/dash/deps/polyfill@7.v2_18_2m1739530123.12.1.min.js HTTP/1.1" 200 -
+2025-02-14 16:11:56,246 INFO: 127.0.0.1 - - [14/Feb/2025 16:11:56] "GET /dashboard/assets/scripts.js?m=1739532606.1276817 HTTP/1.1" 200 -
+2025-02-14 16:11:56,247 INFO: 127.0.0.1 - - [14/Feb/2025 16:11:56] "GET /dashboard/_dash-component-suites/dash/deps/prop-types@15.v2_18_2m1739530123.8.1.min.js HTTP/1.1" 200 -
+2025-02-14 16:11:56,247 INFO: 127.0.0.1 - - [14/Feb/2025 16:11:56] "GET /dashboard/_dash-component-suites/dash/deps/react@16.v2_18_2m1739530123.14.0.min.js HTTP/1.1" 200 -
+2025-02-14 16:11:56,248 INFO: 127.0.0.1 - - [14/Feb/2025 16:11:56] "GET /dashboard/_dash-component-suites/dash/deps/react-dom@16.v2_18_2m1739530123.14.0.min.js HTTP/1.1" 200 -
+2025-02-14 16:11:56,252 INFO: 127.0.0.1 - - [14/Feb/2025 16:11:56] "GET /dashboard/_dash-component-suites/dash/dash-renderer/build/dash_renderer.v2_18_2m1739530123.min.js HTTP/1.1" 200 -
+2025-02-14 16:11:56,475 INFO: 127.0.0.1 - - [14/Feb/2025 16:11:56] "GET /dashboard/_dash-component-suites/dash/dcc/dash_core_components.v2_14_3m1739530123.js HTTP/1.1" 200 -
+2025-02-14 16:11:56,553 INFO: 127.0.0.1 - - [14/Feb/2025 16:11:56] "GET /dashboard/_dash-component-suites/dash/dcc/dash_core_components-shared.v2_14_3m1739530123.js HTTP/1.1" 200 -
+2025-02-14 16:11:56,554 INFO: 127.0.0.1 - - [14/Feb/2025 16:11:56] "GET /dashboard/_dash-component-suites/dash/html/dash_html_components.v2_0_20m1739530123.min.js HTTP/1.1" 200 -
+2025-02-14 16:11:56,555 INFO: 127.0.0.1 - - [14/Feb/2025 16:11:56] "GET /dashboard/_dash-component-suites/dash/dash_table/bundle.v5_2_13m1739530123.js HTTP/1.1" 200 -
+2025-02-14 16:11:56,879 INFO: 127.0.0.1 - - [14/Feb/2025 16:11:56] "GET /dashboard/_dash-dependencies HTTP/1.1" 200 -
+2025-02-14 16:11:56,881 INFO: 127.0.0.1 - - [14/Feb/2025 16:11:56] "GET /dashboard/_favicon.ico?v=2.18.2 HTTP/1.1" 200 -
+2025-02-14 16:11:56,883 INFO: 127.0.0.1 - - [14/Feb/2025 16:11:56] "GET /dashboard/_dash-layout HTTP/1.1" 200 -
+2025-02-14 16:11:57,145 ERROR: Exception on /dashboard/_dash-update-component [POST]
+Traceback (most recent call last):
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\dash.py", line 1376, in dispatch
+    ctx.run(
+    ~~~~~~~^
+        functools.partial(
+        ^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+        )
+        ^
+    )
+    ^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\_callback.py", line 507, in add_context
+    raise err
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\_callback.py", line 496, in add_context
+    output_value = _invoke_callback(func, *func_args, **func_kwargs)
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\_callback.py", line 43, in _invoke_callback
+    return func(*args, **kwargs)  # %% callback invoked %%
+  File "c:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\fraud_detection_app\serve_model.py", line 173, in update_dashboard
+    filtered_data = fraud_data.loc[start_date:end_date]
+                    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexing.py", line 1191, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexing.py", line 1411, in _getitem_axis
+    return self._get_slice_axis(key, axis=axis)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexing.py", line 1443, in _get_slice_axis
+    indexer = labels.slice_indexer(slice_obj.start, slice_obj.stop, slice_obj.step)
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexes\datetimes.py", line 697, in slice_indexer
+    raise KeyError(
+    ...<2 lines>...
+    )
+KeyError: 'Value based partial slicing on non-monotonic DatetimeIndexes with non-existing keys is not allowed.'
+2025-02-14 16:11:57,150 INFO: 127.0.0.1 - - [14/Feb/2025 16:11:57] "[35m[1mPOST /dashboard/_dash-update-component HTTP/1.1[0m" 500 -
+2025-02-14 16:11:57,208 INFO: 127.0.0.1 - - [14/Feb/2025 16:11:57] "[36mGET /dashboard/_dash-component-suites/dash/dcc/async-dropdown.js HTTP/1.1[0m" 304 -
+2025-02-14 16:11:57,209 INFO: 127.0.0.1 - - [14/Feb/2025 16:11:57] "[36mGET /dashboard/_dash-component-suites/dash/dcc/async-slider.js HTTP/1.1[0m" 304 -
+2025-02-14 16:11:57,209 INFO: 127.0.0.1 - - [14/Feb/2025 16:11:57] "[36mGET /dashboard/_dash-component-suites/dash/dcc/async-datepicker.js HTTP/1.1[0m" 304 -
+2025-02-14 16:11:57,211 INFO: 127.0.0.1 - - [14/Feb/2025 16:11:57] "[36mGET /dashboard/_dash-component-suites/dash/dcc/async-graph.js HTTP/1.1[0m" 304 -
+2025-02-14 16:11:57,224 INFO: 127.0.0.1 - - [14/Feb/2025 16:11:57] "[36mGET /dashboard/_dash-component-suites/plotly/package_data/plotly.min.js HTTP/1.1[0m" 304 -
+2025-02-14 16:12:05,882 ERROR: Exception on /dashboard/_dash-update-component [POST]
+Traceback (most recent call last):
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\dash.py", line 1376, in dispatch
+    ctx.run(
+    ~~~~~~~^
+        functools.partial(
+        ^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+        )
+        ^
+    )
+    ^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\_callback.py", line 507, in add_context
+    raise err
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\_callback.py", line 496, in add_context
+    output_value = _invoke_callback(func, *func_args, **func_kwargs)
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\_callback.py", line 43, in _invoke_callback
+    return func(*args, **kwargs)  # %% callback invoked %%
+  File "c:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\fraud_detection_app\serve_model.py", line 173, in update_dashboard
+    filtered_data = fraud_data.loc[start_date:end_date]
+                    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexing.py", line 1191, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexing.py", line 1411, in _getitem_axis
+    return self._get_slice_axis(key, axis=axis)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexing.py", line 1443, in _get_slice_axis
+    indexer = labels.slice_indexer(slice_obj.start, slice_obj.stop, slice_obj.step)
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexes\datetimes.py", line 697, in slice_indexer
+    raise KeyError(
+    ...<2 lines>...
+    )
+KeyError: 'Value based partial slicing on non-monotonic DatetimeIndexes with non-existing keys is not allowed.'
+2025-02-14 16:12:05,884 INFO: 127.0.0.1 - - [14/Feb/2025 16:12:05] "[35m[1mPOST /dashboard/_dash-update-component HTTP/1.1[0m" 500 -
+2025-02-14 16:12:07,744 ERROR: Exception on /dashboard/_dash-update-component [POST]
+Traceback (most recent call last):
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\dash.py", line 1376, in dispatch
+    ctx.run(
+    ~~~~~~~^
+        functools.partial(
+        ^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+        )
+        ^
+    )
+    ^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\_callback.py", line 507, in add_context
+    raise err
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\_callback.py", line 496, in add_context
+    output_value = _invoke_callback(func, *func_args, **func_kwargs)
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\_callback.py", line 43, in _invoke_callback
+    return func(*args, **kwargs)  # %% callback invoked %%
+  File "c:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\fraud_detection_app\serve_model.py", line 173, in update_dashboard
+    filtered_data = fraud_data.loc[start_date:end_date]
+                    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexing.py", line 1191, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexing.py", line 1411, in _getitem_axis
+    return self._get_slice_axis(key, axis=axis)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexing.py", line 1443, in _get_slice_axis
+    indexer = labels.slice_indexer(slice_obj.start, slice_obj.stop, slice_obj.step)
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexes\datetimes.py", line 697, in slice_indexer
+    raise KeyError(
+    ...<2 lines>...
+    )
+KeyError: 'Value based partial slicing on non-monotonic DatetimeIndexes with non-existing keys is not allowed.'
+2025-02-14 16:12:07,746 INFO: 127.0.0.1 - - [14/Feb/2025 16:12:07] "[35m[1mPOST /dashboard/_dash-update-component HTTP/1.1[0m" 500 -
+2025-02-14 16:12:14,918 ERROR: Exception on /dashboard/_dash-update-component [POST]
+Traceback (most recent call last):
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\dash.py", line 1376, in dispatch
+    ctx.run(
+    ~~~~~~~^
+        functools.partial(
+        ^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+        )
+        ^
+    )
+    ^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\_callback.py", line 507, in add_context
+    raise err
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\_callback.py", line 496, in add_context
+    output_value = _invoke_callback(func, *func_args, **func_kwargs)
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\_callback.py", line 43, in _invoke_callback
+    return func(*args, **kwargs)  # %% callback invoked %%
+  File "c:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\fraud_detection_app\serve_model.py", line 173, in update_dashboard
+    filtered_data = fraud_data.loc[start_date:end_date]
+                    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexing.py", line 1191, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexing.py", line 1411, in _getitem_axis
+    return self._get_slice_axis(key, axis=axis)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexing.py", line 1443, in _get_slice_axis
+    indexer = labels.slice_indexer(slice_obj.start, slice_obj.stop, slice_obj.step)
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexes\datetimes.py", line 697, in slice_indexer
+    raise KeyError(
+    ...<2 lines>...
+    )
+KeyError: 'Value based partial slicing on non-monotonic DatetimeIndexes with non-existing keys is not allowed.'
+2025-02-14 16:12:14,920 INFO: 127.0.0.1 - - [14/Feb/2025 16:12:14] "[35m[1mPOST /dashboard/_dash-update-component HTTP/1.1[0m" 500 -
+2025-02-14 16:12:16,072 ERROR: Exception on /dashboard/_dash-update-component [POST]
+Traceback (most recent call last):
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\dash.py", line 1376, in dispatch
+    ctx.run(
+    ~~~~~~~^
+        functools.partial(
+        ^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+        )
+        ^
+    )
+    ^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\_callback.py", line 507, in add_context
+    raise err
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\_callback.py", line 496, in add_context
+    output_value = _invoke_callback(func, *func_args, **func_kwargs)
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\_callback.py", line 43, in _invoke_callback
+    return func(*args, **kwargs)  # %% callback invoked %%
+  File "c:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\fraud_detection_app\serve_model.py", line 173, in update_dashboard
+    filtered_data = fraud_data.loc[start_date:end_date]
+                    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexing.py", line 1191, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexing.py", line 1411, in _getitem_axis
+    return self._get_slice_axis(key, axis=axis)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexing.py", line 1443, in _get_slice_axis
+    indexer = labels.slice_indexer(slice_obj.start, slice_obj.stop, slice_obj.step)
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexes\datetimes.py", line 697, in slice_indexer
+    raise KeyError(
+    ...<2 lines>...
+    )
+KeyError: 'Value based partial slicing on non-monotonic DatetimeIndexes with non-existing keys is not allowed.'
+2025-02-14 16:12:16,075 INFO: 127.0.0.1 - - [14/Feb/2025 16:12:16] "[35m[1mPOST /dashboard/_dash-update-component HTTP/1.1[0m" 500 -
+2025-02-14 16:12:18,417 ERROR: Exception on /dashboard/_dash-update-component [POST]
+Traceback (most recent call last):
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\dash.py", line 1376, in dispatch
+    ctx.run(
+    ~~~~~~~^
+        functools.partial(
+        ^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+        )
+        ^
+    )
+    ^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\_callback.py", line 507, in add_context
+    raise err
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\_callback.py", line 496, in add_context
+    output_value = _invoke_callback(func, *func_args, **func_kwargs)
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\_callback.py", line 43, in _invoke_callback
+    return func(*args, **kwargs)  # %% callback invoked %%
+  File "c:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\fraud_detection_app\serve_model.py", line 173, in update_dashboard
+    filtered_data = fraud_data.loc[start_date:end_date]
+                    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexing.py", line 1191, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexing.py", line 1411, in _getitem_axis
+    return self._get_slice_axis(key, axis=axis)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexing.py", line 1443, in _get_slice_axis
+    indexer = labels.slice_indexer(slice_obj.start, slice_obj.stop, slice_obj.step)
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexes\datetimes.py", line 697, in slice_indexer
+    raise KeyError(
+    ...<2 lines>...
+    )
+KeyError: 'Value based partial slicing on non-monotonic DatetimeIndexes with non-existing keys is not allowed.'
+2025-02-14 16:12:18,420 INFO: 127.0.0.1 - - [14/Feb/2025 16:12:18] "[35m[1mPOST /dashboard/_dash-update-component HTTP/1.1[0m" 500 -
+2025-02-14 16:12:21,559 ERROR: Exception on /dashboard/_dash-update-component [POST]
+Traceback (most recent call last):
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\dash.py", line 1376, in dispatch
+    ctx.run(
+    ~~~~~~~^
+        functools.partial(
+        ^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+        )
+        ^
+    )
+    ^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\_callback.py", line 507, in add_context
+    raise err
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\_callback.py", line 496, in add_context
+    output_value = _invoke_callback(func, *func_args, **func_kwargs)
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\_callback.py", line 43, in _invoke_callback
+    return func(*args, **kwargs)  # %% callback invoked %%
+  File "c:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\fraud_detection_app\serve_model.py", line 173, in update_dashboard
+    filtered_data = fraud_data.loc[start_date:end_date]
+                    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexing.py", line 1191, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexing.py", line 1411, in _getitem_axis
+    return self._get_slice_axis(key, axis=axis)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexing.py", line 1443, in _get_slice_axis
+    indexer = labels.slice_indexer(slice_obj.start, slice_obj.stop, slice_obj.step)
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexes\datetimes.py", line 697, in slice_indexer
+    raise KeyError(
+    ...<2 lines>...
+    )
+KeyError: 'Value based partial slicing on non-monotonic DatetimeIndexes with non-existing keys is not allowed.'
+2025-02-14 16:12:21,561 INFO: 127.0.0.1 - - [14/Feb/2025 16:12:21] "[35m[1mPOST /dashboard/_dash-update-component HTTP/1.1[0m" 500 -
+2025-02-14 16:12:23,242 ERROR: Exception on /dashboard/_dash-update-component [POST]
+Traceback (most recent call last):
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\dash.py", line 1376, in dispatch
+    ctx.run(
+    ~~~~~~~^
+        functools.partial(
+        ^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+        )
+        ^
+    )
+    ^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\_callback.py", line 507, in add_context
+    raise err
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\_callback.py", line 496, in add_context
+    output_value = _invoke_callback(func, *func_args, **func_kwargs)
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\_callback.py", line 43, in _invoke_callback
+    return func(*args, **kwargs)  # %% callback invoked %%
+  File "c:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\fraud_detection_app\serve_model.py", line 173, in update_dashboard
+    filtered_data = fraud_data.loc[start_date:end_date]
+                    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexing.py", line 1191, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexing.py", line 1411, in _getitem_axis
+    return self._get_slice_axis(key, axis=axis)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexing.py", line 1443, in _get_slice_axis
+    indexer = labels.slice_indexer(slice_obj.start, slice_obj.stop, slice_obj.step)
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexes\datetimes.py", line 697, in slice_indexer
+    raise KeyError(
+    ...<2 lines>...
+    )
+KeyError: 'Value based partial slicing on non-monotonic DatetimeIndexes with non-existing keys is not allowed.'
+2025-02-14 16:12:23,244 INFO: 127.0.0.1 - - [14/Feb/2025 16:12:23] "[35m[1mPOST /dashboard/_dash-update-component HTTP/1.1[0m" 500 -
+2025-02-14 16:12:25,010 ERROR: Exception on /dashboard/_dash-update-component [POST]
+Traceback (most recent call last):
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\dash.py", line 1376, in dispatch
+    ctx.run(
+    ~~~~~~~^
+        functools.partial(
+        ^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+        )
+        ^
+    )
+    ^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\_callback.py", line 507, in add_context
+    raise err
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\_callback.py", line 496, in add_context
+    output_value = _invoke_callback(func, *func_args, **func_kwargs)
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\_callback.py", line 43, in _invoke_callback
+    return func(*args, **kwargs)  # %% callback invoked %%
+  File "c:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\fraud_detection_app\serve_model.py", line 173, in update_dashboard
+    filtered_data = fraud_data.loc[start_date:end_date]
+                    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexing.py", line 1191, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexing.py", line 1411, in _getitem_axis
+    return self._get_slice_axis(key, axis=axis)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexing.py", line 1443, in _get_slice_axis
+    indexer = labels.slice_indexer(slice_obj.start, slice_obj.stop, slice_obj.step)
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\indexes\datetimes.py", line 697, in slice_indexer
+    raise KeyError(
+    ...<2 lines>...
+    )
+KeyError: 'Value based partial slicing on non-monotonic DatetimeIndexes with non-existing keys is not allowed.'
+2025-02-14 16:12:25,013 INFO: 127.0.0.1 - - [14/Feb/2025 16:12:25] "[35m[1mPOST /dashboard/_dash-update-component HTTP/1.1[0m" 500 -
+2025-02-14 16:16:01,666 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.2:5000
+2025-02-14 16:16:01,666 INFO: [33mPress CTRL+C to quit[0m
+2025-02-14 16:16:08,293 INFO: 127.0.0.1 - - [14/Feb/2025 16:16:08] "GET /dashboard/ HTTP/1.1" 200 -
+2025-02-14 16:16:10,064 INFO: 127.0.0.1 - - [14/Feb/2025 16:16:10] "GET /dashboard/assets/styles.css?m=1739532606.1276817 HTTP/1.1" 200 -
+2025-02-14 16:16:10,296 INFO: 127.0.0.1 - - [14/Feb/2025 16:16:10] "GET /dashboard/_dash-component-suites/dash/deps/polyfill@7.v2_18_2m1739530123.12.1.min.js HTTP/1.1" 200 -
+2025-02-14 16:16:10,786 INFO: 127.0.0.1 - - [14/Feb/2025 16:16:10] "GET /dashboard/_dash-component-suites/dash/deps/react@16.v2_18_2m1739530123.14.0.min.js HTTP/1.1" 200 -
+2025-02-14 16:16:10,968 INFO: 127.0.0.1 - - [14/Feb/2025 16:16:10] "GET /dashboard/_dash-component-suites/dash/deps/react-dom@16.v2_18_2m1739530123.14.0.min.js HTTP/1.1" 200 -
+2025-02-14 16:16:11,055 INFO: 127.0.0.1 - - [14/Feb/2025 16:16:11] "GET /dashboard/assets/scripts.js?m=1739532606.1276817 HTTP/1.1" 200 -
+2025-02-14 16:16:11,166 INFO: 127.0.0.1 - - [14/Feb/2025 16:16:11] "GET /dashboard/_dash-component-suites/dash/deps/prop-types@15.v2_18_2m1739530123.8.1.min.js HTTP/1.1" 200 -
+2025-02-14 16:16:12,471 INFO: 127.0.0.1 - - [14/Feb/2025 16:16:12] "GET /dashboard/_dash-component-suites/dash/dash-renderer/build/dash_renderer.v2_18_2m1739530123.min.js HTTP/1.1" 200 -
+2025-02-14 16:16:12,757 INFO: 127.0.0.1 - - [14/Feb/2025 16:16:12] "GET /dashboard/_dash-component-suites/dash/dcc/dash_core_components.v2_14_3m1739530123.js HTTP/1.1" 200 -
+2025-02-14 16:16:12,946 INFO: 127.0.0.1 - - [14/Feb/2025 16:16:12] "GET /dashboard/_dash-component-suites/dash/dcc/dash_core_components-shared.v2_14_3m1739530123.js HTTP/1.1" 200 -
+2025-02-14 16:16:13,122 INFO: 127.0.0.1 - - [14/Feb/2025 16:16:13] "GET /dashboard/_dash-component-suites/dash/html/dash_html_components.v2_0_20m1739530123.min.js HTTP/1.1" 200 -
+2025-02-14 16:16:13,283 INFO: 127.0.0.1 - - [14/Feb/2025 16:16:13] "GET /dashboard/_dash-component-suites/dash/dash_table/bundle.v5_2_13m1739530123.js HTTP/1.1" 200 -
+2025-02-14 16:16:14,766 INFO: 127.0.0.1 - - [14/Feb/2025 16:16:14] "GET /dashboard/_favicon.ico?v=2.18.2 HTTP/1.1" 200 -
+2025-02-14 16:16:14,882 INFO: 127.0.0.1 - - [14/Feb/2025 16:16:14] "GET /dashboard/_dash-dependencies HTTP/1.1" 200 -
+2025-02-14 16:16:14,983 INFO: 127.0.0.1 - - [14/Feb/2025 16:16:14] "GET /dashboard/_dash-layout HTTP/1.1" 200 -
+2025-02-14 16:16:16,124 INFO: 127.0.0.1 - - [14/Feb/2025 16:16:16] "[36mGET /dashboard/_dash-component-suites/dash/dcc/async-dropdown.js HTTP/1.1[0m" 304 -
+2025-02-14 16:16:16,771 INFO: 127.0.0.1 - - [14/Feb/2025 16:16:16] "[36mGET /dashboard/_dash-component-suites/dash/dcc/async-graph.js HTTP/1.1[0m" 304 -
+2025-02-14 16:16:16,931 INFO: 127.0.0.1 - - [14/Feb/2025 16:16:16] "[36mGET /dashboard/_dash-component-suites/plotly/package_data/plotly.min.js HTTP/1.1[0m" 304 -
+2025-02-14 16:16:17,184 INFO: 127.0.0.1 - - [14/Feb/2025 16:16:17] "POST /dashboard/_dash-update-component HTTP/1.1" 200 -
+2025-02-14 16:16:26,657 INFO: 127.0.0.1 - - [14/Feb/2025 16:16:26] "POST /dashboard/_dash-update-component HTTP/1.1" 200 -
+2025-02-14 16:16:33,349 INFO: 127.0.0.1 - - [14/Feb/2025 16:16:33] "POST /dashboard/_dash-update-component HTTP/1.1" 200 -
+2025-02-14 16:16:43,613 INFO: 127.0.0.1 - - [14/Feb/2025 16:16:43] "POST /dashboard/_dash-update-component HTTP/1.1" 200 -
+2025-02-14 16:17:37,403 INFO: 127.0.0.1 - - [14/Feb/2025 16:17:37] "POST /dashboard/_dash-update-component HTTP/1.1" 200 -
+2025-02-14 16:18:04,940 INFO: 127.0.0.1 - - [14/Feb/2025 16:18:04] "POST /dashboard/_dash-update-component HTTP/1.1" 200 -
+2025-02-14 16:18:39,833 ERROR: Exception on /dashboard/_dash-update-component [POST]
+Traceback (most recent call last):
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\dash.py", line 1376, in dispatch
+    ctx.run(
+    ~~~~~~~^
+        functools.partial(
+        ^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+        )
+        ^
+    )
+    ^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\_callback.py", line 507, in add_context
+    raise err
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\_callback.py", line 496, in add_context
+    output_value = _invoke_callback(func, *func_args, **func_kwargs)
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\dash\_callback.py", line 43, in _invoke_callback
+    return func(*args, **kwargs)  # %% callback invoked %%
+  File "c:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\fraud_detection_app\serve_model.py", line 201, in update_dashboard
+    return selected_value, selected_value, selected_value, fraud_trends_fig, geo_fraud_fig, device_fraud_fig, browser_fraud_fig
+           ^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'selected_value' where it is not associated with a value
+2025-02-14 16:18:39,837 INFO: 127.0.0.1 - - [14/Feb/2025 16:18:39] "[35m[1mPOST /dashboard/_dash-update-component HTTP/1.1[0m" 500 -
