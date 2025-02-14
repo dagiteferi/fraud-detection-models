@@ -1,7 +1,6 @@
 import os
 import joblib
 import logging
-import numpy as np
 import pandas as pd
 from flask import Flask, request, jsonify
 import dash
@@ -75,22 +74,22 @@ def predict():
 
 # Dashboard (using Dash)
 dash_app.layout = html.Div([  # Dash layout
-    html.Header([
+    html.Header([  # Header section
         html.H1("Fraud Detection Dashboard", className="title"),
         html.P("Analyze and track fraud cases in real time.", className="subtitle")
     ], className="header"),
     
     # Summary Boxes
-    html.Div([
-        html.Div([
+    html.Div([  # Summary statistics section
+        html.Div([  
             html.H4("Total Transactions"),
             html.P(id="total-transactions", children="Loading..."),
         ], className="box"),
-        html.Div([
+        html.Div([  
             html.H4("Fraud Cases"),
             html.P(id="fraud-cases", children="Loading..."),
         ], className="box"),
-        html.Div([
+        html.Div([  
             html.H4("Fraud Percentage"),
             html.P(id="fraud-percentage", children="Loading..."),
         ], className="box"),
