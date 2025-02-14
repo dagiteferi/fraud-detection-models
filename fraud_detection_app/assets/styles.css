@@ -13,12 +13,27 @@ body {
 }
 
 /* Header */
+/* Default Header */
 .header {
-    background-color: #0044cc;
-    color: white;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    color: black;
+    z-index: 1000;
+    padding: 15px;
     text-align: center;
-    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease-in-out;
 }
+
+/* Sticky Header Animation */
+.header.scrolled {
+    background-color: #0066cc;  /* Dark background */
+    color: white;  /* Change text color */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+
 
 .title {
     margin: 0;
@@ -43,6 +58,11 @@ body {
     width: 30%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.box:hover {
+    transform: scale(1.05); /* Hover effect for interactive feel */
 }
 
 .box h4 {
@@ -58,6 +78,7 @@ body {
 .graph {
     margin-top: 30px;
 }
+
 /* Dashboard container and layout */
 .dashboard-container {
     padding: 20px;
@@ -87,6 +108,11 @@ body {
     flex: 1;
     margin: 0 10px;
     text-align: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.stat-card:hover {
+    transform: scale(1.05); /* Hover effect for interactive feel */
 }
 
 .stat-card h3 {
@@ -139,6 +165,11 @@ body {
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     flex: 1;
+    transition: transform 0.2s ease-in-out;
+}
+
+.chart-card:hover {
+    transform: scale(1.05); /* Hover effect for interactive feel */
 }
 
 .chart-card h3 {
@@ -211,3 +242,78 @@ body {
     margin-bottom: 1rem;
 }
 
+/* Color Scheme */
+:root {
+    --primary-blue: #0066cc;
+    --light-gray: #f5f6f8;
+    --success-green: #28a745;
+    --error-red: #e74c3c;
+}
+
+/* Error/Success Messages */
+.success-message {
+    background-color: var(--success-green);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.error-message {
+    background-color: var(--error-red);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Typography */
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Interactive Elements */
+button, .button {
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, .button:hover {
+    background-color: darken(var(--primary-blue), 10%);
+}
+
+button:active, .button:active {
+    transform: scale(0.98);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .dashboard-container {
+        padding: 10px;
+    }
+    .box {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .stat-card {
+        flex: 1 1 45%;
+    }
+    .chart-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+}

@@ -84,10 +84,9 @@ def load_data_once():
     fraud_data.set_index('purchase_time', inplace=True)
 
 # Dashboard (using Dash)
-dash_app.layout = html.Div([  # Dash layout
-    html.Header([  # Header section
+dash_app.layout = html.Div([
+    html.Header([
         html.H1("Fraud Detection Dashboard", className="title"),
-        #html.P("Analyze and track fraud cases in real time.", className="subtitle")
     ], className="header"),
     
     # Summary Boxes
