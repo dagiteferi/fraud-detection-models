@@ -54,19 +54,27 @@ pip install -r requirements.txt
 ```
 ### 4️⃣ Run the API
 ```sh
-cd -----
-python s-----
+cd fraud_detection_app
+python serve_model.py
 ```
+The API will run at http://127.0.0.1:5000/.
 ### 5️⃣ Run the Dashboard
 ```sh
 cd -----
 python -----
 ```
 ## 🚀 Running with Docker
+1️⃣ Build the Docker Image
 ```sh
-docker build -t ----- .
+docker build -t fraud-detection-app .
 docker run -p ---------
 ```
+2️⃣ Run the Docker Container
+```sh
+docker run -p 5000:5000 fraud-detection-app
+```
+The API will be accessible at http://127.0.0.1:5000/ inside the container.
+
 ## 📊 Dashboard Features
 
 . 
