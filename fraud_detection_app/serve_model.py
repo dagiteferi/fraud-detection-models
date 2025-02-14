@@ -87,20 +87,8 @@ def load_data_once():
 dash_app.layout = html.Div([  # Dash layout
     html.Header([  # Header section
         html.H1("Fraud Detection Dashboard", className="title"),
-        html.P("Analyze and track fraud cases in real time.", className="subtitle")
+        #html.P("Analyze and track fraud cases in real time.", className="subtitle")
     ], className="header"),
-    
-    # Dropdown for selecting the metric
-    dcc.Dropdown(
-        id='metric-dropdown',
-        options=[
-            {'label': 'Total Transactions', 'value': 'total_transactions'},
-            {'label': 'Fraud Cases', 'value': 'fraud_cases'},
-            {'label': 'Fraud Percentage', 'value': 'fraud_percentage'}
-        ],
-        value='total_transactions',  # Default value
-        style={'width': '50%'}
-    ),
     
     # Summary Boxes
     html.Div([  # Summary statistics section
@@ -132,7 +120,6 @@ dash_app.layout = html.Div([  # Dash layout
 ])
 
 # Callbacks to update the dashboard
-# Callback to update the dashboard
 @dash_app.callback(
     [Output("total-transactions", "children"),
      Output("fraud-cases", "children"),
@@ -141,9 +128,9 @@ dash_app.layout = html.Div([  # Dash layout
      Output("geographic-fraud", "figure"),
      Output("device-fraud", "figure"),
      Output("browser-fraud", "figure")],
-    Input("metric-dropdown", "value")  # Trigger update when the dropdown changes
+    Input("fraud-trends", "id")  # Trigger update when the page loads
 )
-def update_dashboard(selected_metric):
+def update_dashboard(_):
     # Get total transactions and fraud cases
     total_transactions = len(fraud_data)
     fraud_cases = fraud_data[fraud_data['class'] == 1].shape[0]
@@ -169,20 +156,6 @@ def update_dashboard(selected_metric):
     browser_names = list(fraud_by_browser.keys())
     fraud_counts_by_browser = list(fraud_by_browser.values())
 
-    # Select the metric to display
-    if selected_metric == 'total_transactions':
-        selected_value = f"{total_transactions:,}"  # Format with commas for readability
-        fraud_percentage_display = round(fraud_percentage, 2)
-        fraud_cases_display = f"{fraud_cases:,}"  # Format with commas for readability
-    elif selected_metric == 'fraud_cases':
-        selected_value = f"{fraud_cases:,}"
-        fraud_percentage_display = round(fraud_percentage, 2)
-        fraud_cases_display = f"{fraud_cases:,}"
-    elif selected_metric == 'fraud_percentage':
-        selected_value = f"{round(fraud_percentage, 2)}%"
-        fraud_percentage_display = f"{round(fraud_percentage, 2)}%"
-        fraud_cases_display = f"{fraud_cases:,}"
-
     # Create figures using Plotly for the graphs
     fraud_trends_fig = {
         "data": [go.Scatter(x=fraud_trends_dates, y=fraud_trends, mode='lines')],
@@ -205,8 +178,7 @@ def update_dashboard(selected_metric):
         "layout": go.Layout(title="Fraud Cases by Browser", xaxis={"title": "Browser"}, yaxis={"title": "Fraud Cases"})
     }
 
-    return selected_value, fraud_cases_display, fraud_percentage_display, fraud_trends_fig, geo_fraud_fig, device_fraud_fig, browser_fraud_fig
-
+    return total_transactions, fraud_cases, round(fraud_percentage, 2), fraud_trends_fig, geo_fraud_fig, device_fraud_fig, browser_fraud_fig
 
 if __name__ == "__main__":
     # Ensure logs directory exists for logging
