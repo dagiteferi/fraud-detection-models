@@ -70,3 +70,16 @@ Feature names seen at fit time, yet now missing:
 2025-02-12 23:00:04,912 INFO: 127.0.0.1 - - [12/Feb/2025 23:00:04] "POST /predict HTTP/1.1" 200 -
 2025-02-12 23:00:07,935 INFO: 127.0.0.1 - - [12/Feb/2025 23:00:07] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -
 2025-02-12 23:00:37,982 INFO: 127.0.0.1 - - [12/Feb/2025 23:00:37] "POST /predict HTTP/1.1" 200 -
+2025-02-14 13:36:29,323 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.2:5000
+2025-02-14 13:36:29,324 INFO: [33mPress CTRL+C to quit[0m
+2025-02-14 13:37:30,150 INFO: Received prediction request: {'model_type': 'fraud', 'user_id': 24952, 'purchase_value': 0.494721, 'age': -0.712568, 'hour_of_day': 0.937208, 'day_of_week': 0.492565, 'purchase_delay': -1.577617, 'user_transaction_frequency': 0.0, 'device_transaction_frequency': 3.177611, 'user_transaction_velocity': 4.345476, 'source_Direct': 0, 'source_SEO': 1, 'browser_FireFox': 0, 'browser_IE': 0, 'browser_Opera': 1, 'browser_Safari': 0, 'sex_M': 1}
+2025-02-14 13:37:30,181 INFO: Fraud model prediction: 1 with probability: 1.0
+2025-02-14 13:37:30,181 INFO: 127.0.0.1 - - [14/Feb/2025 13:37:30] "POST /predict HTTP/1.1" 200 -
+2025-02-14 13:38:17,311 INFO: Received prediction request: {'model_type': 'fraud', 'user_id': 24952, 'purchase_value': 0.494721, 'age': -0.712568, 'hour_of_day': 0.937208, 'day_of_week': 0.492565, 'purchase_delay': -1.577617, 'user_transaction_frequency': 0.0, 'device_transaction_frequency': 3.177611, 'user_transaction_velocity': 4.345476, 'source_Direct': 0, 'source_SEO': 1, 'browser_FireFox': 0, 'browser_IE': 0, 'browser_Opera': 1, 'browser_Safari': 0, 'sex_M': 1}
+2025-02-14 13:38:17,331 INFO: Fraud model prediction: 1 with probability: 1.0
+2025-02-14 13:38:17,332 INFO: 127.0.0.1 - - [14/Feb/2025 13:38:17] "POST /predict HTTP/1.1" 200 -
+2025-02-14 13:38:51,885 INFO: 127.0.0.1 - - [14/Feb/2025 13:38:51] "GET /dashboard/summary HTTP/1.1" 200 -
+2025-02-14 13:38:52,015 INFO: 127.0.0.1 - - [14/Feb/2025 13:38:52] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -

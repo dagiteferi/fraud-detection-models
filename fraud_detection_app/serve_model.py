@@ -5,7 +5,6 @@ import numpy as np
 import pandas as pd
 from flask import Flask, request, jsonify
 
-# Define model paths
 # Define model paths (adjusted for Docker container)
 FRAUD_MODEL_PATH = os.path.join("models", "random_forest_model_fraud.pkl")
 CREDIT_CARD_MODEL_PATH = os.path.join("models", "randomforestfor_credit_card_data.pkl")
@@ -66,6 +65,44 @@ def predict():
     except Exception as e:
         app.logger.error(f"Error occurred: {str(e)}")
         return jsonify({"error": str(e)}), 500
+
+# Dashboard data endpoints
+@app.route("/dashboard/summary", methods=["GET"])
+def get_summary():
+    # Example summary data, replace with actual logic
+    data = {
+        "total_transactions": 100000,  # Replace with actual value
+        "fraud_cases": 1200,  # Replace with actual value
+        "fraud_percentage": 1.2  # Replace with actual value
+    }
+    return jsonify(data)
+
+@app.route("/dashboard/trends", methods=["GET"])
+def get_fraud_trends():
+    # Example trends data, replace with actual logic
+    trends = {
+        "dates": ["2024-01-01", "2024-01-02", "2024-01-03"],  # Replace with actual dates
+        "fraud_cases": [100, 200, 150]  # Replace with actual fraud cases data
+    }
+    return jsonify(trends)
+
+@app.route("/dashboard/geography", methods=["GET"])
+def get_geographic_data():
+    # Example geographic fraud analysis data, replace with actual data
+    geo_data = {
+        "locations": ["New York", "Los Angeles", "Chicago"],  # Replace with actual locations
+        "fraud_cases": [50, 30, 40]  # Replace with actual fraud cases by location
+    }
+    return jsonify(geo_data)
+
+@app.route("/dashboard/devices", methods=["GET"])
+def get_device_data():
+    # Example device fraud analysis data, replace with actual data
+    device_data = {
+        "devices": ["Desktop", "Mobile", "Tablet"],  # Replace with actual device types
+        "fraud_cases": [800, 300, 100]  # Replace with actual fraud cases by device
+    }
+    return jsonify(device_data)
 
 if __name__ == "__main__":
     # Ensure logs directory exists for logging
