@@ -72,6 +72,17 @@ def predict():
         app.logger.error(f"Error occurred: {str(e)}")
         return jsonify({"error": str(e)}), 500
 
+# Load data once before the first request
+@app.before_request
+def load_data_once():
+    global fraud_data
+    fraud_data = pd.read_csv('data/processed/processed_fraud_data.csv')
+    
+    # Filter data to ensure it's consistent and doesn't change
+    fraud_data = fraud_data[fraud_data['purchase_value'] > 0]
+    fraud_data['purchase_time'] = pd.to_datetime(fraud_data['purchase_time'])
+    fraud_data.set_index('purchase_time', inplace=True)
+
 # Dashboard (using Dash)
 dash_app.layout = html.Div([  # Dash layout
     html.Header([  # Header section
@@ -116,21 +127,16 @@ dash_app.layout = html.Div([  # Dash layout
      Output("fraud-trends", "figure"),
      Output("geographic-fraud", "figure"),
      Output("device-fraud", "figure"),
-     Output("browser-fraud", "figure")],  # New output for browser fraud chart
+     Output("browser-fraud", "figure")],
     Input("fraud-trends", "id")  # Trigger update when the page loads
 )
 def update_dashboard(_):
-    # Load the processed fraud data
-    fraud_data = pd.read_csv('data/processed/processed_fraud_data.csv')
-
     # Get total transactions and fraud cases
     total_transactions = len(fraud_data)
     fraud_cases = fraud_data[fraud_data['class'] == 1].shape[0]
     fraud_percentage = (fraud_cases / total_transactions) * 100
 
     # Create fraud trends data (time series of fraud cases)
-    fraud_data['purchase_time'] = pd.to_datetime(fraud_data['purchase_time'])
-    fraud_data.set_index('purchase_time', inplace=True)
     fraud_trends = fraud_data.resample('D').apply(lambda x: (x['class'] == 1).sum())  # Daily fraud count
     fraud_trends_dates = fraud_trends.index.astype(str)
 
@@ -173,7 +179,6 @@ def update_dashboard(_):
     }
 
     return total_transactions, fraud_cases, round(fraud_percentage, 2), fraud_trends_fig, geo_fraud_fig, device_fraud_fig, browser_fraud_fig
-
 
 if __name__ == "__main__":
     # Ensure logs directory exists for logging
