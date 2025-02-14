@@ -103,6 +103,9 @@ dash_app.layout = html.Div([  # Dash layout
 
     # Device Analysis
     dcc.Graph(id="device-fraud", className="graph"),
+
+    # Browser Analysis (new addition)
+    dcc.Graph(id="browser-fraud", className="graph"),
 ])
 
 # Callbacks to update the dashboard
@@ -112,44 +115,65 @@ dash_app.layout = html.Div([  # Dash layout
      Output("fraud-percentage", "children"),
      Output("fraud-trends", "figure"),
      Output("geographic-fraud", "figure"),
-     Output("device-fraud", "figure")],
+     Output("device-fraud", "figure"),
+     Output("browser-fraud", "figure")],  # New output for browser fraud chart
     Input("fraud-trends", "id")  # Trigger update when the page loads
 )
 def update_dashboard(_):
-    # Example data - Replace with real data from your database or CSV
-    total_transactions = 100000
-    fraud_cases = 1200
+    # Load the processed fraud data
+    fraud_data = pd.read_csv('data/processed/processed_fraud_data.csv')
+
+    # Get total transactions and fraud cases
+    total_transactions = len(fraud_data)
+    fraud_cases = fraud_data[fraud_data['class'] == 1].shape[0]
     fraud_percentage = (fraud_cases / total_transactions) * 100
 
-    # Example trends data
-    trends_dates = ["2024-01-01", "2024-01-02", "2024-01-03"]
-    fraud_trends = [100, 200, 150]
+    # Create fraud trends data (time series of fraud cases)
+    fraud_data['purchase_time'] = pd.to_datetime(fraud_data['purchase_time'])
+    fraud_data.set_index('purchase_time', inplace=True)
+    fraud_trends = fraud_data.resample('D').apply(lambda x: (x['class'] == 1).sum())  # Daily fraud count
+    fraud_trends_dates = fraud_trends.index.astype(str)
 
-    # Example geographic data
-    locations = ["New York", "Los Angeles", "Chicago"]
-    fraud_by_location = [50, 30, 40]
+    # Example geographic data (assuming 'ip_address' is the location)
+    fraud_by_location = fraud_data.groupby('ip_address')['class'].sum().sort_values(ascending=False).head(10)
+    locations = fraud_by_location.index
+    fraud_counts_by_location = fraud_by_location.values
 
-    # Example device data
-    devices = ["Desktop", "Mobile", "Tablet"]
-    fraud_by_device = [800, 300, 100]
+    # Example device data (assuming 'device_id' represents the device)
+    fraud_by_device = fraud_data.groupby('device_id')['class'].sum().sort_values(ascending=False).head(10)
+    devices = fraud_by_device.index
+    fraud_counts_by_device = fraud_by_device.values
+
+    # Browser fraud analysis (assuming binary flags for each browser)
+    browsers = ['browser_FireFox', 'browser_IE', 'browser_Opera', 'browser_Safari']
+    fraud_by_browser = {browser: fraud_data[browser].sum() for browser in browsers}
+    browser_names = list(fraud_by_browser.keys())
+    fraud_counts_by_browser = list(fraud_by_browser.values())
 
     # Create figures using Plotly for the graphs
     fraud_trends_fig = {
-        "data": [go.Scatter(x=trends_dates, y=fraud_trends, mode='lines')],
+        "data": [go.Scatter(x=fraud_trends_dates, y=fraud_trends, mode='lines')],
         "layout": go.Layout(title="Fraud Cases Over Time", xaxis={"title": "Date"}, yaxis={"title": "Fraud Cases"})
     }
 
     geo_fraud_fig = {
-        "data": [go.Bar(x=locations, y=fraud_by_location)],
-        "layout": go.Layout(title="Geographic Fraud Analysis", xaxis={"title": "Location"}, yaxis={"title": "Fraud Cases"})
+        "data": [go.Bar(x=locations, y=fraud_counts_by_location)],
+        "layout": go.Layout(title="Geographic Fraud Analysis", xaxis={"title": "IP Address"}, yaxis={"title": "Fraud Cases"})
     }
 
     device_fraud_fig = {
-        "data": [go.Bar(x=devices, y=fraud_by_device)],
-        "layout": go.Layout(title="Fraud Cases by Device", xaxis={"title": "Device"}, yaxis={"title": "Fraud Cases"})
+        "data": [go.Bar(x=devices, y=fraud_counts_by_device)],
+        "layout": go.Layout(title="Fraud Cases by Device", xaxis={"title": "Device ID"}, yaxis={"title": "Fraud Cases"})
     }
 
-    return total_transactions, fraud_cases, round(fraud_percentage, 2), fraud_trends_fig, geo_fraud_fig, device_fraud_fig
+    # Browser fraud bar chart
+    browser_fraud_fig = {
+        "data": [go.Bar(x=browser_names, y=fraud_counts_by_browser)],
+        "layout": go.Layout(title="Fraud Cases by Browser", xaxis={"title": "Browser"}, yaxis={"title": "Fraud Cases"})
+    }
+
+    return total_transactions, fraud_cases, round(fraud_percentage, 2), fraud_trends_fig, geo_fraud_fig, device_fraud_fig, browser_fraud_fig
+
 
 if __name__ == "__main__":
     # Ensure logs directory exists for logging
