@@ -849,3 +849,26 @@ KeyError: 'Value based partial slicing on non-monotonic DatetimeIndexes with non
 2025-02-14 15:53:16,809 INFO: 127.0.0.1 - - [14/Feb/2025 15:53:16] "[36mGET /dashboard/_dash-component-suites/dash/dcc/async-graph.js HTTP/1.1[0m" 304 -
 2025-02-14 15:53:17,156 INFO: 127.0.0.1 - - [14/Feb/2025 15:53:17] "[36mGET /dashboard/_dash-component-suites/plotly/package_data/plotly.min.js HTTP/1.1[0m" 304 -
 2025-02-14 15:53:17,523 INFO: 127.0.0.1 - - [14/Feb/2025 15:53:17] "POST /dashboard/_dash-update-component HTTP/1.1" 200 -
+2025-02-14 15:59:02,147 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.2:5000
+2025-02-14 15:59:02,147 INFO: [33mPress CTRL+C to quit[0m
+2025-02-14 15:59:08,576 INFO: 127.0.0.1 - - [14/Feb/2025 15:59:08] "GET /dashboard/ HTTP/1.1" 200 -
+2025-02-14 15:59:08,588 INFO: 127.0.0.1 - - [14/Feb/2025 15:59:08] "GET /dashboard/assets/styles.css?m=1739532606.1276817 HTTP/1.1" 200 -
+2025-02-14 15:59:08,835 INFO: 127.0.0.1 - - [14/Feb/2025 15:59:08] "GET /dashboard/_dash-component-suites/dash/deps/polyfill@7.v2_18_2m1739530123.12.1.min.js HTTP/1.1" 200 -
+2025-02-14 15:59:08,902 INFO: 127.0.0.1 - - [14/Feb/2025 15:59:08] "GET /dashboard/_dash-component-suites/dash/deps/react@16.v2_18_2m1739530123.14.0.min.js HTTP/1.1" 200 -
+2025-02-14 15:59:08,904 INFO: 127.0.0.1 - - [14/Feb/2025 15:59:08] "GET /dashboard/_dash-component-suites/dash/deps/prop-types@15.v2_18_2m1739530123.8.1.min.js HTTP/1.1" 200 -
+2025-02-14 15:59:08,907 INFO: 127.0.0.1 - - [14/Feb/2025 15:59:08] "GET /dashboard/_dash-component-suites/dash/deps/react-dom@16.v2_18_2m1739530123.14.0.min.js HTTP/1.1" 200 -
+2025-02-14 15:59:08,908 INFO: 127.0.0.1 - - [14/Feb/2025 15:59:08] "GET /dashboard/assets/scripts.js?m=1739532606.1276817 HTTP/1.1" 200 -
+2025-02-14 15:59:08,909 INFO: 127.0.0.1 - - [14/Feb/2025 15:59:08] "GET /dashboard/_dash-component-suites/dash/dash-renderer/build/dash_renderer.v2_18_2m1739530123.min.js HTTP/1.1" 200 -
+2025-02-14 15:59:09,143 INFO: 127.0.0.1 - - [14/Feb/2025 15:59:09] "GET /dashboard/_dash-component-suites/dash/dcc/dash_core_components.v2_14_3m1739530123.js HTTP/1.1" 200 -
+2025-02-14 15:59:09,218 INFO: 127.0.0.1 - - [14/Feb/2025 15:59:09] "GET /dashboard/_dash-component-suites/dash/html/dash_html_components.v2_0_20m1739530123.min.js HTTP/1.1" 200 -
+2025-02-14 15:59:09,218 INFO: 127.0.0.1 - - [14/Feb/2025 15:59:09] "GET /dashboard/_dash-component-suites/dash/dcc/dash_core_components-shared.v2_14_3m1739530123.js HTTP/1.1" 200 -
+2025-02-14 15:59:09,220 INFO: 127.0.0.1 - - [14/Feb/2025 15:59:09] "GET /dashboard/_dash-component-suites/dash/dash_table/bundle.v5_2_13m1739530123.js HTTP/1.1" 200 -
+2025-02-14 15:59:09,551 INFO: 127.0.0.1 - - [14/Feb/2025 15:59:09] "GET /dashboard/_dash-layout HTTP/1.1" 200 -
+2025-02-14 15:59:09,553 INFO: 127.0.0.1 - - [14/Feb/2025 15:59:09] "GET /dashboard/_dash-dependencies HTTP/1.1" 200 -
+2025-02-14 15:59:09,556 INFO: 127.0.0.1 - - [14/Feb/2025 15:59:09] "GET /dashboard/_favicon.ico?v=2.18.2 HTTP/1.1" 200 -
+2025-02-14 15:59:09,924 INFO: 127.0.0.1 - - [14/Feb/2025 15:59:09] "[36mGET /dashboard/_dash-component-suites/dash/dcc/async-graph.js HTTP/1.1[0m" 304 -
+2025-02-14 15:59:09,935 INFO: 127.0.0.1 - - [14/Feb/2025 15:59:09] "[36mGET /dashboard/_dash-component-suites/plotly/package_data/plotly.min.js HTTP/1.1[0m" 304 -
+2025-02-14 15:59:10,049 INFO: 127.0.0.1 - - [14/Feb/2025 15:59:10] "POST /dashboard/_dash-update-component HTTP/1.1" 200 -

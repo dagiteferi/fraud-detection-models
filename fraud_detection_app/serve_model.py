@@ -26,6 +26,14 @@ credit_card_model = joblib.load(CREDIT_CARD_MODEL_PATH)
 logging.basicConfig(filename="logs/api.log", level=logging.INFO,
                     format="%(asctime)s %(levelname)s: %(message)s")
 
+# Load fraud data globally
+fraud_data = pd.read_csv('data/processed/processed_fraud_data.csv')
+
+# Filter and preprocess data globally
+fraud_data = fraud_data[fraud_data['purchase_value'] > 0]
+fraud_data['purchase_time'] = pd.to_datetime(fraud_data['purchase_time'])
+fraud_data.set_index('purchase_time', inplace=True)
+
 # Home route for Flask
 @app.route("/")
 def home():
@@ -72,24 +80,54 @@ def predict():
         app.logger.error(f"Error occurred: {str(e)}")
         return jsonify({"error": str(e)}), 500
 
-# Load data once before the first request
-@app.before_request
-def load_data_once():
-    global fraud_data
-    fraud_data = pd.read_csv('data/processed/processed_fraud_data.csv')
-    
-    # Filter data to ensure it's consistent and doesn't change
-    fraud_data = fraud_data[fraud_data['purchase_value'] > 0]
-    fraud_data['purchase_time'] = pd.to_datetime(fraud_data['purchase_time'])
-    fraud_data.set_index('purchase_time', inplace=True)
-
 # Dashboard (using Dash)
 dash_app.layout = html.Div([  # Dash layout
     html.Header([  # Header section
         html.H1("Fraud Detection Dashboard", className="title"),
         html.P("Analyze and track fraud cases in real time.", className="subtitle")
     ], className="header"),
-    
+
+    # Filters Section
+    html.Div([
+        html.Div([
+            html.Label("Select Date Range:"),
+            dcc.DatePickerRange(
+                id='date-picker-range',
+                start_date=fraud_data.index.min().date(),
+                end_date=fraud_data.index.max().date(),
+                display_format='YYYY-MM-DD',
+                style={'width': '100%'}
+            ),
+        ], style={'width': '30%', 'display': 'inline-block'}),
+        
+        html.Div([
+            html.Label("Select Fraud Type:"),
+            dcc.Dropdown(
+                id='fraud-type-dropdown',
+                options=[
+                    {'label': 'All', 'value': 'all'},
+                    {'label': 'Fraud', 'value': 1},
+                    {'label': 'Non-Fraud', 'value': 0},
+                ],
+                value='all',
+                style={'width': '100%'}
+            ),
+        ], style={'width': '30%', 'display': 'inline-block'}),
+        
+        html.Div([
+            html.Label("Select Top N Fraud Cases:"),
+            dcc.Slider(
+                id='top-n-slider',
+                min=1,
+                max=20,
+                step=1,
+                value=10,
+                marks={i: str(i) for i in range(1, 21)},
+                tooltip={"placement": "bottom", "always_visible": True}
+            ),
+        ], style={'width': '30%', 'display': 'inline-block'}),
+    ], className="filters"),
+
     # Summary Boxes
     html.Div([  # Summary statistics section
         html.Div([  
@@ -105,7 +143,7 @@ dash_app.layout = html.Div([  # Dash layout
             html.P(id="fraud-percentage", children="Loading..."),
         ], className="box"),
     ], className="summary-boxes"),
-    
+
     # Line Chart for Fraud Trends
     dcc.Graph(id="fraud-trends", className="graph"),
 
@@ -128,31 +166,44 @@ dash_app.layout = html.Div([  # Dash layout
      Output("geographic-fraud", "figure"),
      Output("device-fraud", "figure"),
      Output("browser-fraud", "figure")],
-    Input("fraud-trends", "id")  # Trigger update when the page loads
+    [Input("date-picker-range", "start_date"),
+     Input("date-picker-range", "end_date"),
+     Input("fraud-type-dropdown", "value"),
+     Input("top-n-slider", "value")]
 )
-def update_dashboard(_):
+def update_dashboard(start_date, end_date, fraud_type, top_n):
+    # Filter data based on the selected date range
+    filtered_data = fraud_data.loc[start_date:end_date]
+
+    # Filter data based on fraud type (Fraud=1, Non-Fraud=0)
+    if fraud_type != 'all':
+        filtered_data = filtered_data[filtered_data['class'] == int(fraud_type)]
+
     # Get total transactions and fraud cases
-    total_transactions = len(fraud_data)
-    fraud_cases = fraud_data[fraud_data['class'] == 1].shape[0]
+    total_transactions = len(filtered_data)
+    fraud_cases = filtered_data[filtered_data['class'] == 1].shape[0]
     fraud_percentage = (fraud_cases / total_transactions) * 100
 
     # Create fraud trends data (time series of fraud cases)
-    fraud_trends = fraud_data.resample('D').apply(lambda x: (x['class'] == 1).sum())  # Daily fraud count
+    fraud_trends = filtered_data.resample('D').apply(lambda x: (x['class'] == 1).sum())  # Daily fraud count
     fraud_trends_dates = fraud_trends.index.astype(str)
 
+    # Highlight top N fraud cases based on purchase value (or frequency)
+    top_fraud_cases = filtered_data.nlargest(top_n, 'purchase_value')
+
     # Example geographic data (assuming 'ip_address' is the location)
-    fraud_by_location = fraud_data.groupby('ip_address')['class'].sum().sort_values(ascending=False).head(10)
+    fraud_by_location = filtered_data.groupby('ip_address')['class'].sum().sort_values(ascending=False).head(10)
     locations = fraud_by_location.index
     fraud_counts_by_location = fraud_by_location.values
 
     # Example device data (assuming 'device_id' represents the device)
-    fraud_by_device = fraud_data.groupby('device_id')['class'].sum().sort_values(ascending=False).head(10)
+    fraud_by_device = filtered_data.groupby('device_id')['class'].sum().sort_values(ascending=False).head(10)
     devices = fraud_by_device.index
     fraud_counts_by_device = fraud_by_device.values
 
     # Browser fraud analysis (assuming binary flags for each browser)
     browsers = ['browser_FireFox', 'browser_IE', 'browser_Opera', 'browser_Safari']
-    fraud_by_browser = {browser: fraud_data[browser].sum() for browser in browsers}
+    fraud_by_browser = {browser: filtered_data[browser].sum() for browser in browsers}
     browser_names = list(fraud_by_browser.keys())
     fraud_counts_by_browser = list(fraud_by_browser.values())
 
