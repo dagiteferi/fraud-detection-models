@@ -83,3 +83,4 @@ Feature names seen at fit time, yet now missing:
 2025-02-14 13:38:17,332 INFO: 127.0.0.1 - - [14/Feb/2025 13:38:17] "POST /predict HTTP/1.1" 200 -
 2025-02-14 13:38:51,885 INFO: 127.0.0.1 - - [14/Feb/2025 13:38:51] "GET /dashboard/summary HTTP/1.1" 200 -
 2025-02-14 13:38:52,015 INFO: 127.0.0.1 - - [14/Feb/2025 13:38:52] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-02-14 13:41:55,170 INFO: 127.0.0.1 - - [14/Feb/2025 13:41:55] "[33mGET /dashboard/ HTTP/1.1[0m" 404 -
