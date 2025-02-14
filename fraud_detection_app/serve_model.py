@@ -7,6 +7,7 @@ import dash
 from dash import dcc, html
 from dash.dependencies import Input, Output
 import plotly.graph_objs as go
+import time
 
 # Initialize Flask app
 app = Flask(__name__)
@@ -85,37 +86,66 @@ def load_data_once():
 
 # Dashboard (using Dash)
 dash_app.layout = html.Div([
-    html.Header([
-        html.H1("Fraud Detection Dashboard", className="title"),
-    ], className="header"),
+    html.Header([html.H1("Fraud Detection Dashboard", className="title")], className="header"),
     
     # Summary Boxes
     html.Div([  # Summary statistics section
         html.Div([  
             html.H4("Total Transactions"),
-            html.P(id="total-transactions", children="Loading..."),
+            html.P(id="total-transactions", children="0"),  # Initial count as 0
         ], className="box"),
         html.Div([  
             html.H4("Fraud Cases"),
-            html.P(id="fraud-cases", children="Loading..."),
+            html.P(id="fraud-cases", children="0"),  # Initial count as 0
         ], className="box"),
         html.Div([  
             html.H4("Fraud Percentage"),
-            html.P(id="fraud-percentage", children="Loading..."),
+            html.P(id="fraud-percentage", children="0%"),  # Initial count as 0%
         ], className="box"),
     ], className="summary-boxes"),
     
     # Line Chart for Fraud Trends
-    dcc.Graph(id="fraud-trends", className="graph"),
+    dcc.Loading(
+        id="loading-spinner",
+        type="circle",  # You can choose from different types like "circle", "dot", etc.
+        children=[
+            dcc.Graph(id="fraud-trends", className="graph")
+        ]
+    ),
 
     # Geographic Analysis
-    dcc.Graph(id="geographic-fraud", className="graph"),
+    dcc.Loading(
+        id="loading-spinner-geo",
+        type="circle",  # You can choose from different types like "circle", "dot", etc.
+        children=[
+            dcc.Graph(id="geographic-fraud", className="graph")
+        ]
+    ),
 
     # Device Analysis
-    dcc.Graph(id="device-fraud", className="graph"),
+    dcc.Loading(
+        id="loading-spinner-device",
+        type="circle",  # You can choose from different types like "circle", "dot", etc.
+        children=[
+            dcc.Graph(id="device-fraud", className="graph")
+        ]
+    ),
 
     # Browser Analysis (new addition)
-    dcc.Graph(id="browser-fraud", className="graph"),
+    dcc.Loading(
+        id="loading-spinner-browser",
+        type="circle",  # You can choose from different types like "circle", "dot", etc.
+        children=[
+            dcc.Graph(id="browser-fraud", className="graph")
+        ]
+    ),
+
+    # Interval for updating counters
+    dcc.Interval(
+        id="update-interval",
+        interval=100,  # Update every 100ms
+        n_intervals=0
+    ),
 ])
 
 # Callbacks to update the dashboard
@@ -127,13 +157,19 @@ dash_app.layout = html.Div([
      Output("geographic-fraud", "figure"),
      Output("device-fraud", "figure"),
      Output("browser-fraud", "figure")],
-    Input("fraud-trends", "id")  # Trigger update when the page loads
+    [Input("fraud-trends", "id"),
+     Input("update-interval", "n_intervals")]  # Trigger update on interval
 )
-def update_dashboard(_):
+def update_dashboard(_, n_intervals):
     # Get total transactions and fraud cases
     total_transactions = len(fraud_data)
     fraud_cases = fraud_data[fraud_data['class'] == 1].shape[0]
     fraud_percentage = (fraud_cases / total_transactions) * 100
+
+    # Increment the counts gradually
+    total_transactions_count = min(n_intervals, total_transactions)
+    fraud_cases_count = min(n_intervals, fraud_cases)
+    fraud_percentage_count = (fraud_cases_count / total_transactions) * 100 if total_transactions_count else 0
 
     # Create fraud trends data (time series of fraud cases)
     fraud_trends = fraud_data.resample('D').apply(lambda x: (x['class'] == 1).sum())  # Daily fraud count
@@ -177,7 +213,7 @@ def update_dashboard(_):
         "layout": go.Layout(title="Fraud Cases by Browser", xaxis={"title": "Browser"}, yaxis={"title": "Fraud Cases"})
     }
 
-    return total_transactions, fraud_cases, round(fraud_percentage, 2), fraud_trends_fig, geo_fraud_fig, device_fraud_fig, browser_fraud_fig
+    return total_transactions_count, fraud_cases_count, round(fraud_percentage_count, 2), fraud_trends_fig, geo_fraud_fig, device_fraud_fig, browser_fraud_fig
 
 if __name__ == "__main__":
     # Ensure logs directory exists for logging
