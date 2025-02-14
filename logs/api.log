@@ -2313,3 +2313,28 @@ KeyError: 'purchase_time'
 2025-02-14 17:53:09,319 INFO: 127.0.0.1 - - [14/Feb/2025 17:53:09] "GET /dashboard/_dash-component-suites/dash/deps/polyfill@7.v2_18_2m1739530123.12.1.min.js HTTP/1.1" 200 -
 2025-02-14 17:53:09,343 INFO: 127.0.0.1 - - [14/Feb/2025 17:53:09] "GET /dashboard/assets/styles.css?m=1739544773.4755807 HTTP/1.1" 200 -
 2025-02-14 17:53:09,599 INFO: 127.0.0.1 - - [14/Feb/2025 17:53:09] "GET /dashboard/_dash-component-suites/dash/deps/react@16.v2_18_2m1739530123.14.0.min.js HTTP/1.1" 200 -
+2025-02-14 17:53:11,371 ERROR: Exception on /dashboard/_dash-component-suites/dash/deps/prop-types@15.v2_18_2m1739530123.8.1.min.js [GET]
+Traceback (most recent call last):
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+  File "c:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\fraud_detection_app\serve_model.py", line 84, in load_data_once
+    fraud_data.set_index('purchase_time', inplace=True)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Dagii\week 8 --9\fraud-detection-models\week-8\Lib\site-packages\pandas\core\frame.py", line 6122, in set_index
+    raise KeyError(f"None of {missing} are in the columns")
+KeyError: "None of ['purchase_time'] are in the columns"
+2025-02-14 17:53:11,373 INFO: 127.0.0.1 - - [14/Feb/2025 17:53:11] "GET /dashboard/_dash-component-suites/dash/deps/react-dom@16.v2_18_2m1739530123.14.0.min.js HTTP/1.1" 200 -
+2025-02-14 17:53:11,377 INFO: 127.0.0.1 - - [14/Feb/2025 17:53:11] "[35m[1mGET /dashboard/_dash-component-suites/dash/deps/prop-types@15.v2_18_2m1739530123.8.1.min.js HTTP/1.1[0m" 500 -
+2025-02-14 17:53:11,680 INFO: 127.0.0.1 - - [14/Feb/2025 17:53:11] "GET /dashboard/assets/scripts.js?m=1739544577.314008 HTTP/1.1" 200 -
+2025-02-14 17:53:13,546 INFO: 127.0.0.1 - - [14/Feb/2025 17:53:13] "GET /dashboard/_dash-component-suites/dash/dash-renderer/build/dash_renderer.v2_18_2m1739530123.min.js HTTP/1.1" 200 -
+2025-02-14 17:53:13,547 INFO: 127.0.0.1 - - [14/Feb/2025 17:53:13] "GET /dashboard/_dash-component-suites/dash/dcc/dash_core_components.v2_14_3m1739530123.js HTTP/1.1" 200 -
+2025-02-14 17:53:13,839 INFO: 127.0.0.1 - - [14/Feb/2025 17:53:13] "GET /dashboard/_dash-component-suites/dash/dcc/dash_core_components-shared.v2_14_3m1739530123.js HTTP/1.1" 200 -
+2025-02-14 17:53:15,194 INFO: 127.0.0.1 - - [14/Feb/2025 17:53:15] "GET /dashboard/_dash-component-suites/dash/html/dash_html_components.v2_0_20m1739530123.min.js HTTP/1.1" 200 -
+2025-02-14 17:53:15,343 INFO: 127.0.0.1 - - [14/Feb/2025 17:53:15] "GET /dashboard/_dash-component-suites/dash/dash_table/bundle.v5_2_13m1739530123.js HTTP/1.1" 200 -
+2025-02-14 17:53:16,696 INFO: 127.0.0.1 - - [14/Feb/2025 17:53:16] "GET /dashboard/_favicon.ico?v=2.18.2 HTTP/1.1" 200 -
