@@ -74,8 +74,11 @@ def predict():
         return jsonify({"error": str(e)}), 500
 
 # Dashboard (using Dash)
-dash_app.layout = html.Div([
-    html.H1("Fraud Detection Dashboard"),
+dash_app.layout = html.Div([  # Dash layout
+    html.Header([
+        html.H1("Fraud Detection Dashboard", className="title"),
+        html.P("Analyze and track fraud cases in real time.", className="subtitle")
+    ], className="header"),
     
     # Summary Boxes
     html.Div([
@@ -94,13 +97,13 @@ dash_app.layout = html.Div([
     ], className="summary-boxes"),
     
     # Line Chart for Fraud Trends
-    dcc.Graph(id="fraud-trends"),
+    dcc.Graph(id="fraud-trends", className="graph"),
 
     # Geographic Analysis
-    dcc.Graph(id="geographic-fraud"),
+    dcc.Graph(id="geographic-fraud", className="graph"),
 
     # Device Analysis
-    dcc.Graph(id="device-fraud"),
+    dcc.Graph(id="device-fraud", className="graph"),
 ])
 
 # Callbacks to update the dashboard
