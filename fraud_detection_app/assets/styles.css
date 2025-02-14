@@ -1,0 +1,60 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+.dashboard {
+    padding: 20px;
+    margin: auto;
+    width: 80%;
+}
+
+/* Header */
+.header {
+    background-color: #0044cc;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.title {
+    margin: 0;
+    font-size: 36px;
+}
+
+.subtitle {
+    font-size: 18px;
+}
+
+/* Summary Boxes */
+.summary-boxes {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.box {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 30%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.box h4 {
+    margin-bottom: 10px;
+}
+
+.box p {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Graphs */
+.graph {
+    margin-top: 30px;
+}
