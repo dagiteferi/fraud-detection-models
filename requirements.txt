@@ -4,6 +4,6 @@ seaborn
 scikit-learn
 mlflow
 imbalanced-learn
-shap 
+dash 
 lime 
 Flask
