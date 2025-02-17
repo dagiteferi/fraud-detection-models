@@ -60,27 +60,43 @@ python serve_model.py
 The API will run at http://127.0.0.1:5000/.
 ### 5️⃣ Run the Dashboard
 ```sh
-cd -----
-python -----
+cd fraud_detection_app
+python serve_model.py
 ```
+The Dashboard will run at http://127.0.0.1:5000/.
 ## 🚀 Running with Docker
 1️⃣ Build the Docker Image
 ```sh
 docker build -t fraud-detection-model -f fraud_detection_app/Dockerfile .
-docker run -d -p 5000:5000 --name fraud-detection-container fraud-detection-model
+
 ```
 2️⃣ Run the Docker Container
 ```sh
-docker run -p 5000:5000 fraud-detection-app
+docker run -d -p 5000:5000 --name fraud-detection-container fraud-detection-model
 ```
 The API will be accessible at http://127.0.0.1:5000/ inside the container.
 
 ## 📊 Dashboard Features
+## Dashboard Features
 
-. 
-. 
-. 
-. 
+1. **Fraud Detection Summary**:
+   - **Total Transactions**: Displays the total number of transactions in the dataset.
+   - **Fraud Cases**: Shows the total number of fraudulent transactions.
+   - **Fraud Percentage**: Displays the percentage of fraudulent transactions out of the total.
+
+2. **Fraud Trends Over Time**:
+   - A time series graph visualizing the number of fraud cases over time. It helps track how fraud patterns evolve.
+
+3. **Geographic Fraud Analysis**:
+   - A bar chart representing the fraud cases grouped by geographic locations (IP addresses). This helps identify regions with high fraudulent activity.
+
+4. **Device-based Fraud Analysis**:
+   - A bar chart showing fraud cases broken down by device ID, allowing identification of devices commonly used for fraudulent transactions.
+
+5. **Browser-based Fraud Analysis**:
+   - A bar chart comparing fraud cases across different browsers, helping to identify any browser-specific fraud patterns.
+
+
 ## 📌 Model Explainability
 SHAP Summary & Force Plots for feature importance
 LIME explanations for individual predictions
