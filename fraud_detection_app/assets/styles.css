@@ -1,0 +1,324 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+.dashboard {
+    padding: 20px;
+    margin: auto;
+    width: 80%;
+}
+
+/* Header */
+/* Default Header */
+.header {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    color: black;
+    z-index: 1000;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease-in-out;
+}
+
+/* Sticky Header Animation */
+.header.scrolled {
+    background-color: #0066cc;  /* Dark background */
+    color: white;  /* Change text color */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+
+.title {
+    margin: 0;
+    font-size: 36px;
+}
+
+.subtitle {
+    font-size: 18px;
+}
+
+/* Summary Boxes */
+.summary-boxes {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.box {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 30%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.box:hover {
+    transform: scale(1.05); /* Hover effect for interactive feel */
+}
+
+.box h4 {
+    margin-bottom: 10px;
+}
+
+.box p {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Graphs */
+.graph {
+    margin-top: 30px;
+}
+
+/* Dashboard container and layout */
+.dashboard-container {
+    padding: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Dashboard title */
+.dashboard-title {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Stats section */
+.stats-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    flex: 1;
+    margin: 0 10px;
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.stat-card:hover {
+    transform: scale(1.05); /* Hover effect for interactive feel */
+}
+
+.stat-card h3 {
+    margin-bottom: 10px;
+    color: #444;
+}
+
+.stat-card p {
+    font-size: 2em;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* Filters section */
+.filters-container {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.filter-item {
+    flex: 1;
+}
+
+.filter-item label {
+    display: block;
+    margin-bottom: 8px;
+    color: #444;
+}
+
+/* Charts section */
+.charts-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.chart-row {
+    display: flex;
+    gap: 20px;
+}
+
+.chart-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    flex: 1;
+    transition: transform 0.2s ease-in-out;
+}
+
+.chart-card:hover {
+    transform: scale(1.05); /* Hover effect for interactive feel */
+}
+
+.chart-card h3 {
+    margin-bottom: 15px;
+    color: #444;
+}
+
+/* Responsive Styles for smaller screens */
+@media (max-width: 768px) {
+    .charts-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .filters-container {
+        flex-direction: column;
+    }
+
+    .chart-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Plotly Graph Customizations */
+.js-plotly-plot {
+    width: 100% !important;
+    margin: 0 auto;
+}
+
+/* Modebar customization */
+.modebar {
+    background-color: transparent !important;
+}
+
+/* Loading spinner */
+.loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+
+/* Dash controls section */
+.dash-controls {
+    margin-bottom: 1rem;
+}
+
+.dash-dropdown {
+    width: 100%;
+    max-width: 300px;
+}
+
+/* Dash container */
+.dash-container {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.dash-graph {
+    margin-bottom: 2rem;
+}
+
+.dash-controls {
+    margin-bottom: 1rem;
+}
+
+/* Color Scheme */
+:root {
+    --primary-blue: #0066cc;
+    --light-gray: #f5f6f8;
+    --success-green: #28a745;
+    --error-red: #e74c3c;
+}
+
+/* Error/Success Messages */
+.success-message {
+    background-color: var(--success-green);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.error-message {
+    background-color: var(--error-red);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Typography */
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Interactive Elements */
+button, .button {
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, .button:hover {
+    background-color: darken(var(--primary-blue), 10%);
+}
+
+button:active, .button:active {
+    transform: scale(0.98);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .dashboard-container {
+        padding: 10px;
+    }
+    .box {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .stat-card {
+        flex: 1 1 45%;
+    }
+    .chart-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+.count-up {
+    font-weight: bold;
+    font-size: 24px;
+    transition: color 0.5s ease-in-out;
+}
