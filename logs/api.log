@@ -9924,3 +9924,26 @@ dash.exceptions.CallbackException: Inputs do not match callback definition
 2025-02-14 18:43:26,060 INFO: 127.0.0.1 - - [14/Feb/2025 18:43:26] "[36mGET /dashboard/_dash-component-suites/dash/dcc/async-graph.js HTTP/1.1[0m" 304 -
 2025-02-14 18:43:26,638 INFO: 127.0.0.1 - - [14/Feb/2025 18:43:26] "[36mGET /dashboard/_dash-component-suites/plotly/package_data/plotly.min.js HTTP/1.1[0m" 304 -
 2025-02-14 18:43:26,984 INFO: 127.0.0.1 - - [14/Feb/2025 18:43:26] "POST /dashboard/_dash-update-component HTTP/1.1" 200 -
+2025-02-17 14:22:39,594 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.6:5000
+2025-02-17 14:22:39,594 INFO: [33mPress CTRL+C to quit[0m
+2025-02-17 14:22:43,867 INFO: 127.0.0.1 - - [17/Feb/2025 14:22:43] "GET /dashboard/ HTTP/1.1" 200 -
+2025-02-17 14:22:43,886 INFO: 127.0.0.1 - - [17/Feb/2025 14:22:43] "GET /dashboard/assets/styles.css?m=1739789472.039489 HTTP/1.1" 200 -
+2025-02-17 14:22:44,214 INFO: 127.0.0.1 - - [17/Feb/2025 14:22:44] "GET /dashboard/assets/scripts.js?m=1739789472.0388875 HTTP/1.1" 200 -
+2025-02-17 14:22:44,243 INFO: 127.0.0.1 - - [17/Feb/2025 14:22:44] "GET /dashboard/_dash-component-suites/dash/deps/polyfill@7.v2_18_2m1739530123.12.1.min.js HTTP/1.1" 200 -
+2025-02-17 14:22:44,285 INFO: 127.0.0.1 - - [17/Feb/2025 14:22:44] "GET /dashboard/_dash-component-suites/dash/deps/prop-types@15.v2_18_2m1739530123.8.1.min.js HTTP/1.1" 200 -
+2025-02-17 14:22:44,293 INFO: 127.0.0.1 - - [17/Feb/2025 14:22:44] "GET /dashboard/_dash-component-suites/dash/deps/react-dom@16.v2_18_2m1739530123.14.0.min.js HTTP/1.1" 200 -
+2025-02-17 14:22:44,333 INFO: 127.0.0.1 - - [17/Feb/2025 14:22:44] "GET /dashboard/_dash-component-suites/dash/deps/react@16.v2_18_2m1739530123.14.0.min.js HTTP/1.1" 200 -
+2025-02-17 14:22:44,424 INFO: 127.0.0.1 - - [17/Feb/2025 14:22:44] "GET /dashboard/_dash-component-suites/dash/dash-renderer/build/dash_renderer.v2_18_2m1739530123.min.js HTTP/1.1" 200 -
+2025-02-17 14:22:44,757 INFO: 127.0.0.1 - - [17/Feb/2025 14:22:44] "GET /dashboard/_dash-component-suites/dash/dcc/dash_core_components-shared.v2_14_3m1739530123.js HTTP/1.1" 200 -
+2025-02-17 14:22:44,769 INFO: 127.0.0.1 - - [17/Feb/2025 14:22:44] "GET /dashboard/_dash-component-suites/dash/dash_table/bundle.v5_2_13m1739530123.js HTTP/1.1" 200 -
+2025-02-17 14:22:44,807 INFO: 127.0.0.1 - - [17/Feb/2025 14:22:44] "GET /dashboard/_dash-component-suites/dash/dcc/dash_core_components.v2_14_3m1739530123.js HTTP/1.1" 200 -
+2025-02-17 14:22:44,854 INFO: 127.0.0.1 - - [17/Feb/2025 14:22:44] "GET /dashboard/_dash-component-suites/dash/html/dash_html_components.v2_0_20m1739530123.min.js HTTP/1.1" 200 -
+2025-02-17 14:22:45,226 INFO: 127.0.0.1 - - [17/Feb/2025 14:22:45] "GET /dashboard/_dash-layout HTTP/1.1" 200 -
+2025-02-17 14:22:45,228 INFO: 127.0.0.1 - - [17/Feb/2025 14:22:45] "GET /dashboard/_dash-dependencies HTTP/1.1" 200 -
+2025-02-17 14:22:45,243 INFO: 127.0.0.1 - - [17/Feb/2025 14:22:45] "GET /dashboard/_favicon.ico?v=2.18.2 HTTP/1.1" 200 -
+2025-02-17 14:22:45,674 INFO: 127.0.0.1 - - [17/Feb/2025 14:22:45] "[36mGET /dashboard/_dash-component-suites/dash/dcc/async-graph.js HTTP/1.1[0m" 304 -
+2025-02-17 14:22:45,858 INFO: 127.0.0.1 - - [17/Feb/2025 14:22:45] "POST /dashboard/_dash-update-component HTTP/1.1" 200 -
+2025-02-17 14:22:47,576 INFO: 127.0.0.1 - - [17/Feb/2025 14:22:47] "[36mGET /dashboard/_dash-component-suites/plotly/package_data/plotly.min.js HTTP/1.1[0m" 304 -
