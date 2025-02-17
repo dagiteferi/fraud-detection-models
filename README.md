@@ -66,8 +66,8 @@ python -----
 ## 🚀 Running with Docker
 1️⃣ Build the Docker Image
 ```sh
-docker build -t fraud-detection-app .
-docker run -p ---------
+docker build -t fraud-detection-model -f fraud_detection_app/Dockerfile .
+docker run -d -p 5000:5000 --name fraud-detection-container fraud-detection-model
 ```
 2️⃣ Run the Docker Container
 ```sh
