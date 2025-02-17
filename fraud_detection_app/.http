@@ -1,0 +1,59 @@
+POST http://127.0.0.1:5000/predict
+Content-Type: application/json
+
+{
+ {
+    "model_type": "fraud",
+    "user_id": 24952,
+    "purchase_value": 0.494721,
+    "age": -0.712568,
+    "hour_of_day": 0.937208,
+    "day_of_week": 0.492565,
+    "purchase_delay": -1.577617,
+    "user_transaction_frequency": 0.0,
+    "device_transaction_frequency": 3.177611,
+    "user_transaction_velocity": 4.345476,
+    "source_Direct": 0,
+    "source_SEO": 1,
+    "browser_FireFox": 0,
+    "browser_IE": 0,
+    "browser_Opera": 1,
+    "browser_Safari": 0,
+    "sex_M": 1
+}
+
+//test the API for the fraud data set
+
+}
+
+POST http://127.0.0.1:5000/predict
+Content-Type: application/json
+
+{
+ {
+    "model_type": "credit_card",
+    "V1": -4.153014,
+    "V2": 8.204797,
+    "V3": -15.031714,
+    "V4": 10.330100,
+    "V5": -3.994426,
+    "V6": -3.250013,
+    "V7": -10.415698,
+    "V8": 4.620804,
+    "V9": -5.711248,
+    "V10": 1.976988,
+    "V11": 0.256510,
+    "V12": 0.485908,
+    "V13": -1.198821,
+    "V14": -0.526567,
+    "V15": 0.634874,
+    "V16": 1.627209,
+    "V17": 0.723235,
+    "V18": 1.00,
+    "V19": true
+}
+
+//test the API for credit_card
+
+}
+

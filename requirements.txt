@@ -1,8 +1,10 @@
 pandas
 matplotlib
 seaborn
-scikit-learn
+numpy==2.2.2
+scikit-learn==1.6.1
 mlflow
 imbalanced-learn
-shap 
+dash 
 lime 
+Flask
