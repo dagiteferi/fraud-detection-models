@@ -1,20 +1,20 @@
-# Use an official Python runtime as a parent image
-FROM python:3.8-slim
+FROM python:3.13.1-slim
+
 
 # Set the working directory in the container
 WORKDIR /app
 
-# Copy the current directory contents into the container at /app
+# Copy the requirements file into the container
+COPY requirements.txt .
+
+# Install all dependencies listed in requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the rest of the application code into the container
 COPY . .
 
-# Install the required versions of numpy and scikit-learn
-RUN pip install numpy==1.24.0 scikit-learn==1.3.2
+# Expose the port the app runs on (if applicable)
+EXPOSE 8050
 
-# Install any other needed packages specified in requirements.txt
-RUN pip install -r requirements.txt
-
-# Make port 5000 available to the world outside this container
-EXPOSE 5000
-
-# Run serve_model.py when the container launches
+# Define the command to run the application
 CMD ["python", "fraud_detection_app/serve_model.py"]
