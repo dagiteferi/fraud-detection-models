@@ -13,7 +13,7 @@ Fraud detection is critical for securing online transactions and banking operati
 - [Installation](#-installation)  
 - [Running with Docker](#-running-with-docker)  
 - [Dashboard Features](#-dashboard-features)  
-- [Model Explainability](#-model-explainability)  
+
 
 
 ### 🔹 Key Features  
@@ -135,6 +135,4 @@ The API will be accessible at http://127.0.0.1:5000/ inside the container.
    - A bar chart comparing fraud cases across different browsers, helping to identify any browser-specific fraud patterns.
 
 
-## 📌 Model Explainability
-SHAP Summary & Force Plots for feature importance
-LIME explanations for individual predictions
+
