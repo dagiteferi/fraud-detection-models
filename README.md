@@ -71,7 +71,7 @@ Fraud detection is critical for securing online transactions and banking operati
 - **Programming Language:** Python (Pandas, NumPy, Scikit-learn, TensorFlow/PyTorch)  
 - **Machine Learning Models:** Logistic Regression, Random Forest, Gradient Boosting, LSTM, CNN  
 - **API & Deployment:** Flask, Docker  
-- **Explainability:** SHAP, LIME  
+- **Explainability:** LIME  
 - **Visualization:** Dash, Matplotlib, Seaborn  
 
 ## 🔧 Installation  
