@@ -26,7 +26,45 @@ Fraud detection is critical for securing online transactions and banking operati
 
 ## 📂 Project Structure  
  ```bash
-   --------------------------------------
+   📂 dagiteferi-fraud-detection-models/
+├── 📜 README.md
+├── 📜 requirements.txt
+├── 🏠 fraud_detection_app/
+│   ├── 📦 Dockerfile
+│   ├── 🔄 callbacks.py
+│   ├── 📜 requirements.txt
+│   ├── 🚀 serve_model.py
+│   ├── 📝 .http
+│   ├── 📂 assets/
+│   │   ├── 🎨 styles.css
+│   │   ├── 📜 scripts.js
+├── 📂 logs/
+├── 📖 notebooks/
+│   ├── 📜 README.md
+│   ├── 📊 Data Analysis Preprocessing.ipynb
+│   ├── 🧐 Model_Explainability.ipynb
+│   ├── 🤖 model_Training_credit_card.ipynb
+│   ├── 🔍 model_Training_fraud_data.ipynb
+│   ├── 📜 __init__.py
+├── 📝 scripts/
+│   ├── 📜 README.md
+│   ├── ⚙️ FeatureEngineering.py
+│   ├── 🧐 Model_Explainability.py
+│   ├── 📊 bivariate.py
+│   ├── 📝 logger.py
+│   ├── 🤖 model.py
+│   ├── 📈 univariate.py
+│   ├── 📜 __init__.py
+├── 🔧 src/
+│   ├── 📜 __init__.py
+│   ├── 📂 data_loading.py
+│   ├── 📂 file_structure.py
+├── 🧪 tests/
+│   ├── 📜 __init__.py
+├── 🏗️ .github/
+│   ├── 📂 workflows/
+│   │   ├── 🔄 unittests.yml
+
 ```
 
 ## 🛠 Tech Stack  
